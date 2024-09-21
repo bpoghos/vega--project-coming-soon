@@ -1,0 +1,47 @@
+.imagesContainer {
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .image {
+    width: auto;
+    height: 500px;
+  }
+  
+  .arrowLeft, .arrowRight {
+    position: absolute;
+    top: 50%;
+    border: none;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    font-size: 2rem;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .arrowLeft:hover, .arrowRight:hover {
+    color: #ffcd07;
+  }
+  
+  .arrowLeft {
+    left: 10px;
+  }
+  
+  .arrowRight {
+    right: 10px;
+  }
+  .textPart{
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
+
+
+
+
+  

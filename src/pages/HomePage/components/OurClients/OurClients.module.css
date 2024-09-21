@@ -1,0 +1,32 @@
+.ourClients {
+    margin-top: 160px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ourClients h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.ourClients p {
+    font-size: 18px;
+    margin: 0 40px;
+}
+
+.card {
+    margin-top: 40px;
+    margin-left: 20px;
+    padding: 10px;
+    height: 100px;
+    /* background-color: #fff;
+    box-shadow: 1px 1px 7px 0px rgba(34, 60, 80, 0.17); */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    height: 100%;
+}

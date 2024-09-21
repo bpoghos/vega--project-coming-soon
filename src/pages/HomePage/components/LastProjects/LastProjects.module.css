@@ -1,0 +1,39 @@
+.lastProjects {
+    margin-top: 160px;
+    margin-bottom: 160px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.lastProjects h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.lastProjects p {
+    font-size: 18px;
+    margin: 0 40px;
+}
+
+.card {
+    margin-top: 40px;
+}
+
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.card p {
+    margin: 0;
+    margin-top: 10px;
+    text-align: start;
+    font-size: 16px;
+}
+

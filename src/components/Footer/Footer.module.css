@@ -1,0 +1,51 @@
+.footer {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 30px !important;
+    padding-bottom: 0 !important;
+}
+
+.row {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #fff;
+}
+
+.row a:hover {
+    color: #ffcd07;
+}
+
+.footer h3 {
+    font-size: 20px;
+}
+
+.logoContainer img {
+    width: 100px;
+}
+
+.menuContainer {
+    font-size: 20px;
+}
+
+.contactContainer p {
+    margin: 0;
+}
+
+.copyrightContainer {
+    padding: 10px;
+    color: #7f7f7f;
+    display: flex;
+    justify-content: center;
+}
+
+.copyrightContainer p {
+    margin: 0;
+}
+
+.copyrightContainer a {
+    margin: 0 5px;
+    color: #7ECDB6;
+}
+
+.copyrightContainer a:hover {
+    color: #152CB6;
+}

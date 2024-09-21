@@ -1,0 +1,15 @@
+.container {
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.container button {
+    margin-top: 40px;
+    padding: 20px 60px;
+    border-radius: 5px;
+    border: none;
+}
+
+.container button:hover {
+    background-color: #ffcd07;
+}
