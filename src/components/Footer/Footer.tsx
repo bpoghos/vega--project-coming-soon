@@ -3,6 +3,7 @@ import logo from "../Header/images/logo dark.png"
 import styles from "./Footer.module.css";
 import { ContactContent, FooterContent } from "../../constants/constants";
 import { useNavigate } from "react-router";
+import { FaViber, FaWhatsapp } from "react-icons/fa6";
 
 
 
@@ -32,9 +33,10 @@ const Footer= ({footerRef}:{footerRef:any}) => {
                     </Col>
                     <Col lg={3} md={3} sm={6} xs={12} className={styles.contactContainer}>
                         <h3>{FooterContent.CONTACTS}</h3>
-                        <p>{ContactContent.ADDRESS} Manandyan 22</p>
-                        <p>{ContactContent.MOBILE} (098) 425239</p>
-                        <p>{ContactContent.EMAIL} arvestanoc@vega-project.org</p>
+                        <p><span>{ContactContent.ADDRESS}</span> Manandyan 22</p>
+                        <p><span>{ContactContent.MOBILE}</span> (098) 425239 </p>
+                        <p><FaViber className={styles.viber}/> <FaWhatsapp className={styles.whatsapp}/></p>
+                        <p><span>{ContactContent.EMAIL}</span> arvestanoc@vega-project.org</p>
                     </Col>
                 </Row>
                 <div className={styles.copyrightContainer}>
