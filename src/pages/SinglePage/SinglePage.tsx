@@ -50,8 +50,10 @@ const SinglePage = ({ fakeData }: { fakeData: FakeDataEntry[] }) => {
       </Container>
 
       <Container className={styles.textPart}>
-        <h6>{selectedData.title}</h6> {/* Use dynamic title */}
-        <p>{selectedData.description}</p> {/* Use dynamic description */}
+        <h5>{selectedData.title}</h5> {/* Use dynamic title */}
+        <p>{selectedData.client}</p> {/* Use dynamic description */}
+        <p>{selectedData.date}</p> {/* Use dynamic description */}
+        <p>{selectedData.address}</p> {/* Use dynamic description */}
       </Container>
     </div>
   );

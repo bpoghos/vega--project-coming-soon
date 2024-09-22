@@ -18,13 +18,13 @@ console.log(project);
                 <div className={styles.hover}>
                     <div className={styles.contentContainer}>
                         <div>
-                            <p className={styles.title}>House</p>
-                            <p className={styles.description}>Lorem ipsum dolor sit amet consectetur adipiscing elit sed
+                            <p className={styles.title}>{project.title}</p>
+                            {/* <p className={styles.description}>Lorem ipsum dolor sit amet consectetur adipiscing elit sed
                                 tempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsum
                                 dolor sit amet consectetur adipiscing elit sed
                                 magna aliqua enim minim veniam exercitation ipsum
                                 dolor sit amet
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                 </div>

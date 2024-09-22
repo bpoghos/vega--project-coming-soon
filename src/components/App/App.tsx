@@ -21,7 +21,6 @@ import armenBaldryanProfile from "../../images/ArmenBaldryan/profile.jpg"
 
 
 import armenVahagni1 from "../../images/ArmenVahagni/a.jpg"
-import armenVahagni2 from "../../images/ArmenVahagni/c.jpg"
 import armenVahagni3 from "../../images/ArmenVahagni/d.jpg"
 import armenVahagni4 from "../../images/ArmenVahagni/e.jpg"
 import armenVahagniProfile from "../../images/ArmenVahagni/profile.jpg"
@@ -29,7 +28,6 @@ import armenVahagniProfile from "../../images/ArmenVahagni/profile.jpg"
 import buzand1 from "../../images/Buzand/1.jpg"
 import buzand2 from "../../images/Buzand/2.jpg"
 import buzand3 from "../../images/Buzand/3.jpg"
-import buzand4 from "../../images/Buzand/4.jpg"
 import buzand5 from "../../images/Buzand/5.jpg"
 import buzandProfile from "../../images/Buzand/profile.jpg"
 
@@ -46,9 +44,6 @@ import charencProfile from "../../images/Charenc/profile.jpg"
 
 
 import manvel1 from "../../images/Manvel/1.jpg"
-import manvel2 from "../../images/Manvel/2.jpg"
-import manvel3 from "../../images/Manvel/3.jpg"
-import manvel4 from "../../images/Manvel/5.jpg"
 import manvel5 from "../../images/Manvel/6.jpg"
 import manvel6 from "../../images/Manvel/7.jpg"
 import manvelProfile from "../../images/Manvel/profile.jpg"
@@ -62,8 +57,6 @@ import vitessProfile from "../../images/vitess/profile.jpg"
 
 import laboratory1 from "../../images/YeastLaboratory/2.jpg"
 import laboratory2 from "../../images/YeastLaboratory/3.jpg"
-import laboratory3 from "../../images/YeastLaboratory/4.jpg"
-import laboratory4 from "../../images/YeastLaboratory/5.jpg"
 import laboratory1Profile from "../../images/YeastLaboratory/profile.jpg"
 
 
@@ -71,8 +64,6 @@ import zoler1 from "../../images/Zoler/1.jpg"
 import zoler2 from "../../images/Zoler/3.jpg"
 import zoler3 from "../../images/Zoler/4.jpg"
 import zoler4 from "../../images/Zoler/5.jpg"
-import zoler5 from "../../images/Zoler/6.jpg"
-import zoler6 from "../../images/Zoler/7.jpg"
 import zolerProfile from "../../images/Zoler/profile.jpg"
 
 
@@ -80,45 +71,27 @@ import avtosrah1 from "../../images/avtosrah/1.jpg"
 import avtosrahProfile from "../../images/avtosrah/profile.jpg"
 
 
-import ayrum1 from "../../images/Ayrum/1.jpg"
 import ayrum2 from "../../images/Ayrum/2.jpg"
-import ayrum3 from "../../images/Ayrum/3.jpg"
 import ayrum4 from "../../images/Ayrum/4.jpg"
 import ayrum5 from "../../images/Ayrum/5.jpg"
 import ayrum6 from "../../images/Ayrum/6.jpg"
-import ayrum7 from "../../images/Ayrum/7.jpg"
 import ayrum8 from "../../images/Ayrum/8.jpg"
-import ayrum9 from "../../images/Ayrum/9.jpg"
 import ayrumProfile from "../../images/Ayrum/profile.jpg"
 
 
 import saryan1 from "../../images/saryan/1.jpg"
-import saryan2 from "../../images/saryan/2.jpg"
 import saryanProfile from "../../images/saryan/profile.jpg"
 
 
-import zigzag1 from "../../images/sayatnovazigzag/1.jpg"
 import zigzag2 from "../../images/sayatnovazigzag/2.jpg"
-import zigzag3 from "../../images/sayatnovazigzag/3.jpg"
-import zigzag4 from "../../images/sayatnovazigzag/4.jpg"
-import zigzag5 from "../../images/sayatnovazigzag/5.jpg"
 import zigzag6 from "../../images/sayatnovazigzag/6.jpg"
-import zigzag7 from "../../images/sayatnovazigzag/7.jpg"
-import zigzag8 from "../../images/sayatnovazigzag/8.jpg"
 import zigzag9 from "../../images/sayatnovazigzag/9.jpg"
-import zigzag10 from "../../images/sayatnovazigzag/10.jpg"
-import zigzag11 from "../../images/sayatnovazigzag/11.jpg"
-import zigzag12 from "../../images/sayatnovazigzag/12.jpg"
 import zigzag13 from "../../images/sayatnovazigzag/13.jpg"
-import zigzag14 from "../../images/sayatnovazigzag/14.jpg"
 import zigzagProfile from "../../images/sayatnovazigzag/profile.jpg"
 
-
-import saghmosavanq1 from "../../images/saghmosavanq/1.jpg"
-import saghmosavanq2 from "../../images/saghmosavanq/2.jpg"
-import saghmosavanq3 from "../../images/saghmosavanq/3.jpg"
-import saghmosavanq4 from "../../images/saghmosavanq/4.jpg"
-import saghmosavanqProfile from "../../images/saghmosavanq/profile.jpg"
+import felicity1 from "../../images/felicity/1.jpg"
+import felicity2 from "../../images/felicity/2.jpg"
+import felicityProfile from "../../images/felicity/profile.jpg"
 
 import vahagni1 from "../../images/Vahagni/1.jpg"
 import vahagni2 from "../../images/Vahagni/2.jpg"
@@ -142,6 +115,9 @@ export interface FakeDataEntry {
   id: number;
   title: string;
   description: string;
+  date: string;
+  client: string;
+  address: string;
   profile: string;
   images: string[]; 
 }
@@ -165,7 +141,10 @@ const App = () => {
     {
       id: 1,
       title: "Single House",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      description: "",
+      date: "Year of Design: 2016",
+      client: "Client: 'A.Baldryan'",
+      address: "",
       profile: armenBaldryanProfile,
       images: [armenBaldryanProfile, armenBaldryan1, armenBaldryan2, armenBaldryan4, armenBaldryan5]
 
@@ -174,6 +153,9 @@ const App = () => {
       id: 2,
       title: "Single House",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2001",
+      client: "Client: 'A.Mkrtchyan'",
+      address: "",
       profile: araikProfile,
       images: [araikProfile, araik1, araik2, araik4]
 
@@ -182,22 +164,31 @@ const App = () => {
       id: 3,
       title: "Single House",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2005",
+      client: "Client: 'A.Khachatryan'",
+      address: "",
       profile: armenVahagniProfile,
-      images: [armenVahagniProfile, armenVahagni1, armenVahagni2, armenVahagni3, armenVahagni4]
+      images: [armenVahagniProfile, armenVahagni1, armenVahagni3, armenVahagni4]
 
     },
     {
       id: 4,
-      title: "Single House",
+      title: "Multifunctional Residential Structure",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2012",
+      client: "Client: 'V.Gevorgyan'",
+      address: "Address: P.Buzand street 45",
       profile: buzandProfile,
-      images: [buzandProfile, buzand1, buzand2, buzand3, buzand4, buzand5]
+      images: [buzandProfile, buzand1, buzand2, buzand3, buzand5]
 
     },
     {
       id: 5,
-      title: "Single House",
+      title: "Multifunctional Residential Structure",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2004",
+      client: "Client: 'FoxFord' LLC",
+      address: "Address: E.Charenc street 24",
       profile: charencProfile,
       images: [charencProfile, charenc1, charenc2, charenc3, charenc4, charenc5, charenc6, charenc7, charenc8, charenc9]
 
@@ -206,78 +197,108 @@ const App = () => {
       id: 6,
       title: "Single House",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2007",
+      client: "Client: 'M.Ghazaryan'",
+      address: "",
       profile: manvelProfile,
-      images: [manvelProfile, manvel1, manvel2, manvel3, manvel4, manvel5 ,manvel6]
+      images: [manvelProfile, manvel1, manvel5 ,manvel6]
 
     },
     {
       id: 7,
-      title: "Single House",
+      title: "Vitess Store and Service center",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2007",
+      client: "Client: 'Zigi Resources'",
+      address: "Address: Avan Acharyan street 41/3",
       profile: vitessProfile,
       images: [vitessProfile, vitess1, vitess2, vitess3]
 
     },
     {
       id: 8,
-      title: "Single House",
+      title: "Microbial Farm",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2015",
+      client: "Client: 'Greta Grigoryan'",
+      address: "Address: Armavir city, Voskehat community, str. Friendship 126",
       profile: laboratory1Profile,
-      images: [laboratory1Profile, laboratory1, laboratory2, laboratory3, laboratory4]
+      images: [laboratory1Profile, laboratory1, laboratory2]
 
     },
     {
       id: 9,
-      title: "Single House",
+      title: "'Zoler' Funeral service center",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2015",
+      client: "Client: 'A.Z.D. Studio LLC'",
+      address: "Address: District, Hasratyan street",
       profile: zolerProfile,
-      images: [zolerProfile, zoler1, zoler2, zoler3, zoler4, zoler5, zoler6]
+      images: [zolerProfile, zoler1, zoler2, zoler3, zoler4]
 
     },
     {
       id: 10,
-      title: "Single House",
+      title: "Public Building Project",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2024",
+      client: "Client: 'H.Hovakimyan'",
+      address: "Address: RA, Kotayk region, Abovyan community, Verin Ptghni village, Boyni district, 1st street 15",
       profile: avtosrahProfile,
       images: [avtosrahProfile, avtosrah1]
 
     },
     {
       id: 11,
-      title: "Single House",
+      title: "Phytosanitary Inspection Checkpoint",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2018",
+      client: "Client: 'KUAT'",
+      address: "Address: RA Lori marz, Chochkan community, Ayrum-Jiliza",
       profile: ayrumProfile,
-      images: [ayrumProfile, ayrum1, ayrum2, ayrum3, ayrum4, ayrum5, ayrum6, ayrum7, ayrum8, ayrum9]
+      images: [ayrumProfile, ayrum2, ayrum4, ayrum5, ayrum6, ayrum8]
 
     },
     {
       id: 12,
-      title: "Single House",
+      title: "Multifunctional Residential Structure",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2005",
+      client: "Client: 'Flintrig' CJSC",
+      address: "Address: M.Saryan street 12",
       profile: saryanProfile,
-      images: [saryanProfile, saryan1, saryan2]
+      images: [saryanProfile, saryan1]
 
     },
     {
       id: 13,
-      title: "Single House",
+      title: "Commercial space",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2006",
+      client: "Client: 'Sh.Tsarukyan'",
+      address: "Address: Sayat-Nova Ave. 20",
       profile: zigzagProfile,
-      images: [zigzagProfile, zigzag1, zigzag2, zigzag3, zigzag4, zigzag5, zigzag6, zigzag7, zigzag8, zigzag9, zigzag10, zigzag11, zigzag12, zigzag13, zigzag14]
+      images: [zigzagProfile, zigzag2, zigzag6, zigzag9, zigzag13]
 
     },
     {
       id: 14,
-      title: "Single House",
+      title: "Public Building",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      profile: saghmosavanqProfile,
-      images: [saghmosavanq2, saghmosavanq1, saghmosavanq3, saghmosavanq4]
+      date: "Year of Design: 2008",
+      client: "Client: 'LAV-SAR LLC'",
+      address: "Address: A. Mikoyan 25",
+      profile: felicityProfile,
+      images: [felicityProfile, felicity1, felicity2]
 
     },
     {
       id: 15,
       title: "Single House",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "Year of Design: 2000",
+      client: "Client: 'Hovnanyan International'",
+      address: "",
       profile: vahagniProfile,
       images: [vahagniProfile, vahagni1, vahagni2, vahagni3, vahagni4, vahagni5, vahagni6, vahagni7, vahagni8, vahagni9]
 

@@ -14,8 +14,16 @@
     color: #ffcd07;
 }
 
+.projectsContainer p{
+    margin: 0;
+}
 .footer h3 {
     font-size: 20px;
+}
+
+.h3style:hover{
+    color: #ffcd07;
+    cursor: pointer;
 }
 
 .logoContainer img {

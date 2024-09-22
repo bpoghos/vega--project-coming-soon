@@ -34,7 +34,7 @@ const Header = ({scrollToFooter}:{scrollToFooter:any}) => {
     }, []);
 
     const scrollStyle = {
-        backgroundColor: isScrolled ? "white" : "transparent"
+        backgroundColor: isScrolled ? "#FFFBF8" : "#e9e9e9db"
     };
 
 
