@@ -93,16 +93,17 @@ import felicity1 from "../../images/felicity/1.jpg"
 import felicity2 from "../../images/felicity/2.jpg"
 import felicityProfile from "../../images/felicity/profile.jpg"
 
-import vahagni1 from "../../images/Vahagni/1.jpg"
-import vahagni2 from "../../images/Vahagni/2.jpg"
-import vahagni3 from "../../images/Vahagni/3.jpg"
-import vahagni4 from "../../images/Vahagni/4.jpg"
-import vahagni5 from "../../images/Vahagni/5.jpg"
-import vahagni6 from "../../images/Vahagni/6.jpg"
-import vahagni7 from "../../images/Vahagni/7.jpg"
-import vahagni8 from "../../images/Vahagni/8.jpg"
-import vahagni9 from "../../images/Vahagni/9.jpg"
-import vahagniProfile from "../../images/Vahagni/profile.jpg"
+import martini1 from "../../images/martini royale 2013/1.jpg"
+import martini2 from "../../images/martini royale 2013/2.jpg"
+import martini3 from "../../images/martini royale 2013/3.jpg"
+import martiniProfile from "../../images/martini royale 2013/profile.jpg"
+
+import mommy1 from "../../images/Mommy/1.jpg"
+import mommy2 from "../../images/Mommy/2.jpg"
+import mommyProfile from "../../images/Mommy/profile.jpg"
+
+
+
 
 
 
@@ -206,7 +207,7 @@ const App = () => {
     },
     {
       id: 7,
-      title: "Vitess Store and Service center",
+      title: `"Vitesse" Store and Service center`,
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
       date: "Year of Design: 2007",
       client: "Client: 'Zigi Resources'",
@@ -228,7 +229,7 @@ const App = () => {
     },
     {
       id: 9,
-      title: "'Zoler' Funeral service center",
+      title: `"Zoler" complex of funeral services`,
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
       date: "Year of Design: 2015",
       client: "Client: 'A.Z.D. Studio LLC'",
@@ -263,7 +264,7 @@ const App = () => {
       id: 12,
       title: "Multifunctional Residential Structure",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2005",
+      date: "Year of Design: 2007-2008",
       client: "Client: 'Flintrig' CJSC",
       address: "Address: M.Saryan street 12",
       profile: saryanProfile,
@@ -294,13 +295,24 @@ const App = () => {
     },
     {
       id: 15,
-      title: "Single House",
+      title: "Martini Royale",
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2000",
-      client: "Client: 'Hovnanyan International'",
-      address: "",
-      profile: vahagniProfile,
-      images: [vahagniProfile, vahagni1, vahagni2, vahagni3, vahagni4, vahagni5, vahagni6, vahagni7, vahagni8, vahagni9]
+      date: "Year of Design: 2013",
+      client: "Client: 'Andako' LLC",
+      address: "Abovyan street 16",
+      profile: martiniProfile,
+      images: [martiniProfile, martini1, martini2, martini3]
+
+    },
+    {
+      id: 16,
+      title: "Mommy",
+      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
+      date: "",
+      client: "",
+      address: "Abovyan street 3/1",
+      profile: mommyProfile,
+      images: [mommyProfile, mommy1, mommy2]
 
     },
   ]

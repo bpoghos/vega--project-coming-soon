@@ -20,7 +20,7 @@ const Footer= ({footerRef}:{footerRef:any}) => {
                     </Col>
                     <Col lg={3} md={3} sm={6} xs={12} className={styles.menuContainer}>
                         <h3 className={styles.h3style} onClick={() => navigate("/")}>{FooterContent.HOME}</h3>
-                        <h3 className={styles.h3style} onClick={() => navigate("/aboutus")}>{FooterContent.ABOUT}</h3>
+                        {/* <h3 className={styles.h3style} onClick={() => navigate("/aboutus")}>{FooterContent.ABOUT}</h3> */}
                     </Col>
                     <Col lg={3} md={3} sm={6} xs={12} className={styles.projectsContainer}>
                         <h3 onClick={() => navigate("/projects")} className={styles.h3style}>{FooterContent.PROJECTS}</h3>
@@ -34,7 +34,7 @@ const Footer= ({footerRef}:{footerRef:any}) => {
                     <Col lg={3} md={3} sm={6} xs={12} className={styles.contactContainer}>
                         <h3>{FooterContent.CONTACTS}</h3>
                         <p><span>{ContactContent.ADDRESS}</span> Manandyan 22</p>
-                        <p><span>{ContactContent.MOBILE}</span> (098) 425239 </p>
+                        <p><span>{ContactContent.MOBILE}</span> +374 98 425239 </p>
                         <p><FaViber className={styles.viber}/> <FaWhatsapp className={styles.whatsapp}/></p>
                         <p><span>{ContactContent.EMAIL}</span> arvestanoc@vega-project.org</p>
                     </Col>

@@ -6,6 +6,7 @@ import armenianLng from './images/armenian.language.png'
 import russianLng from './images/russian.language.webp'
 import { Container, Dropdown, DropdownMenu, DropdownToggle, Nav, Navbar } from "react-bootstrap"
 import { useEffect, useState } from "react"
+import { useLocation } from "react-router"
 
 
 
@@ -19,24 +20,29 @@ const Header = ({scrollToFooter}:{scrollToFooter:any}) => {
     //     setIsLanguageOpen((prevState) => !prevState);
     // };
 
-    
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            setIsScrolled(scrollPosition > 0);
+            if (location.pathname === "/") {
+                const scrollPosition = window.scrollY;
+                setIsScrolled(scrollPosition > 0);
+            } else {
+                setIsScrolled(false); // No scroll effect for other routes
+            }
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []);
+    }, [location.pathname]);
 
     const scrollStyle = {
-        backgroundColor: isScrolled ? "#FFFBF8" : "#e9e9e9db"
+        backgroundColor: location.pathname === "/"
+            ? (isScrolled ? "#FFFBF8" : "#e9e9e9db")
+            : "#FFFBFB" 
     };
-
 
     return (
         <Navbar variant="light" style={scrollStyle} expand="lg" className={styles.navBar} fixed="top">
