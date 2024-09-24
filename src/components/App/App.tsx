@@ -306,10 +306,10 @@ const App = () => {
     },
     {
       id: 16,
-      title: "Mommy",
+      title: `Mommy "Store"`,
       description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "",
-      client: "",
+      date: "Year of Design: 2011",
+      client: "Client: 'A. Mkrtchyan'",
       address: "Abovyan street 3/1",
       profile: mommyProfile,
       images: [mommyProfile, mommy1, mommy2]
