@@ -38,21 +38,21 @@ const Header = ({scrollToFooter}:{scrollToFooter:any}) => {
         };
     }, [location.pathname]);
 
-    const scrollStyle = {
-        backgroundColor: location.pathname === "/"
-            ? (isScrolled ? "#FFFBF8" : "#e9e9e9db")
-            : "#FFFBFB" 
-    };
+    // const scrollStyle = {
+    //     backgroundColor: location.pathname === "/"
+    //         ? (isScrolled ? "#FFFBF8" : "#e9e9e9db")
+    //         : "#FFFBFB" 
+    // };
 
     return (
-        <Navbar variant="light" style={scrollStyle} expand="lg" className={styles.navBar} fixed="top">
+        <Navbar variant="light" /* style={scrollStyle} */ expand="lg" className={styles.navBar} fixed="top">
             <Container>
                 <Navbar.Brand href="/">
                     <img className={styles.logo} src={logo} alt="logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className='custom-collapse'>
-                    <Nav className="ms-auto">
+                    <Nav className="ms-auto custom-nav">
                         <Nav.Link href="/" className={styles.navLink}>{HeaderContent.HOME}</Nav.Link>
                         <Nav.Link href="/projects" className={styles.navLink}>{HeaderContent.PROJECTS}</Nav.Link>
                         <Nav.Link onClick={scrollToFooter} className={styles.navLink}>{HeaderContent.CONTACTS}</Nav.Link>

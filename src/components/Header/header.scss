@@ -2,24 +2,43 @@
 
 
 .custom-collapse {
-    @media (max-width: 991px) { // lg is the breakpoint for "expand=lg"
-      // padding: 4rem 0 1rem 0;
-      border-radius: 0.5rem;
-  
-      .nav-link {
-        text-align: center;
-        color: $black-color;
-        // padding: 0.5rem 0;
-        margin: 0;
-  
-        &:hover {
-          color: $primary-color;
-        }
-      }
-      
-      .custom-language-btn{
-        width: 100%;
-        background-color: red;
+  @media (max-width: 991px) {
+    // lg is the breakpoint for "expand=lg"
+    // padding: 4rem 0 1rem 0;
+    border-radius: 0.5rem;
+
+    .nav-link {
+      text-align: center;
+      color: $black-color;
+      // padding: 0.5rem 0;
+      margin: 0;
+
+      &:hover {
+        color: $primary-color;
       }
     }
+
+    .custom-language-btn {
+      width: 100%;
+      background-color: red;
+    }
   }
+}
+
+.custom-language-btn{
+
+
+    @media (max-width: 991px) { 
+      margin: 1rem;
+    }
+
+  
+}
+
+.custom-nav {
+  @media (max-width: 991px) { 
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.5rem;
+  }
+}

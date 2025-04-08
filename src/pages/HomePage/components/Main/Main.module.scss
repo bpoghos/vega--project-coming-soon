@@ -82,4 +82,24 @@
 
 
 
+@media screen and (max-height: 550px) and (orientation: landscape) {
+    .overlay {
+      width: 80%;
+      max-height: 60vh;
+      transform: translate(-50%, -50%) scale(0.8);
+  
+      h1 {
+        font-size: calc($titleFontSize * 0.8);
+      }
+  
+      p {
+        font-size: calc($subtitleFontSize * 0.8);
+      }
+  
+      button {
+        font-size: calc($usualFontSize * 0.9);
+        padding: 0.8rem 2rem;
+      }
+    }
+  }
   
