@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Itim&display=swap');
+@import "../../../../styles/variables/colors.module.scss";
+@import "../../../../styles/variables/fontFamily.module.scss";
+
+
+
+.background {
+    position: relative;
+    background-image: url("../../../../images/ArmenVahagni/back3.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    h1 {
+        margin: 0;
+        white-space: nowrap;
+        font-family: $decorativeFont;
+        font-size: $titleFontSize;
+        letter-spacing: 0.02em;
+        font-weight: bold;
+        color: $primary-color;
+        z-index: 2;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 120%;
+            transform: translate(-50%, -50%);
+            backdrop-filter: blur(20px);
+            mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 100%);
+            z-index: -1;
+        }
+    }
+
+    p {
+        margin: 0;
+        font-size: $subtitleFontSize;
+        color: $white-color;
+        font-family: $secondaryDecorativeFont;
+        font-weight: 400;
+        font-style: italic;
+        z-index: 2;
+    }
+
+    button {
+        font-size: $usualFontSize;
+        margin-top: 40px;
+        background-color: $white-color;
+        padding: 1rem 4rem;
+        color: $black-color;
+        border: none;
+        font-family: $decorativeFont;
+        font-weight: 400;
+        border-radius: 0.5rem;
+
+        &:hover,
+        &:active,
+        &:focus-visible,
+        &:focus {
+            background-color: $primary-color !important;
+            color: $white-color;
+            box-shadow: none;
+        }
+    }
+}
+
+
+
+  

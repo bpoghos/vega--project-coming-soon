@@ -1,24 +1,20 @@
 import { Button } from "react-bootstrap";
-import styles from "./Main.module.css";
+import styles from "./Main.module.scss";
 import { useNavigate } from "react-router";
-import back from "../../../../images/ArmenVahagni/back3.jpg"
+import { ButtonTexts, Texts } from "../../../../shared/enum";
 
-const Main: React.FC = () => {
+const Main = () => {
 
     const navigate = useNavigate()
 
     return (
-        <div className={styles.background}>
+        <section className={styles.background}>
             <div className={styles.overlay}>
-                {/* <h1>VEGA PROJECT</h1> */}
-                <p>"We create architecture that stands the test of time and elevates the way people live and work. Our modern, innovative spaces reflect your vision and needs, combining beauty and purpose to make a lasting impact."</p>
-                {/* <Button variant="outline-dark" onClick={() => navigate("/aboutus")}>About us</Button> */}
+                <h1>{Texts.MainTitle}</h1>
+                <p><em>{Texts.MainDescription}</em></p>
+                <Button variant="outline-dark" onClick={() => navigate("/aboutus")}>{ButtonTexts.AboutUs}</Button>
             </div>
-            <img
-                alt="background"
-                src={back}
-            />
-        </div>
+        </section>
     );
 };
 

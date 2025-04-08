@@ -104,14 +104,6 @@ import mommyProfile from "../../images/Mommy/profile.jpg"
 
 
 
-
-
-
-
-
-
-
-
 export interface FakeDataEntry {
   id: number;
   title: string;
@@ -136,7 +128,7 @@ const App = () => {
 
 
 
- 
+  
 
   const fakeData: FakeDataEntry[] = [
     {

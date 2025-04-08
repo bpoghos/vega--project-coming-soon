@@ -1,5 +1,5 @@
 import { Container, Row, Col, Navbar, NavLink } from "react-bootstrap";
-import logo from "../Header/images/logo dark.png"
+import logo from "../../assets/logo/logo dark.png";
 import styles from "./Footer.module.css";
 import { ContactContent, FooterContent } from "../../constants/constants";
 import { useNavigate } from "react-router";
