@@ -1,20 +1,24 @@
-import { CategoryName, HeaderContent } from '../../constants/constants'
+import { HeaderContent } from '../../constants/constants'
 import englishLng from '../../assets/language/english.language.jpeg'
 import armenianLng from '../../assets/language/armenian.language.png'
-import { Container, Dropdown, DropdownMenu, DropdownToggle, Nav, Navbar } from "react-bootstrap"
+import { Container, Nav, Navbar } from "react-bootstrap"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router"
 import logo from '../../assets/logo/logo.png'
+import { rulerAnsPencil } from '../../shared/svg/svg'
 import styles from "./Header.module.scss"
 import "./header.scss"
 
 
 
-const Header = ({scrollToFooter}:{scrollToFooter:any}) => {
+const Header = ({ scrollToFooter }: { scrollToFooter: any }) => {
     const [isLanguageClicked, setIsLanguageClicked] = useState<boolean>(false);
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-
+    const handleToggle = () => {
+        setIsOpen(prev => !prev)
+    };
 
     const handleLanguageClick = () => {
         setIsLanguageClicked((prevState) => !prevState);
@@ -38,19 +42,18 @@ const Header = ({scrollToFooter}:{scrollToFooter:any}) => {
         };
     }, [location.pathname]);
 
-    // const scrollStyle = {
-    //     backgroundColor: location.pathname === "/"
-    //         ? (isScrolled ? "#FFFBF8" : "#e9e9e9db")
-    //         : "#FFFBFB" 
-    // };
-
     return (
         <Navbar variant="light" /* style={scrollStyle} */ expand="lg" className={styles.navBar} fixed="top">
             <Container>
                 <Navbar.Brand href="/">
                     <img className={styles.logo} src={logo} alt="logo" />
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle
+                    aria-controls="basic-navbar-nav"
+                    onClick={handleToggle}
+                    className={`custom-toggle-icon ${isOpen ? "active" : ""}`}>
+                    {rulerAnsPencil}
+                </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav" className='custom-collapse'>
                     <Nav className="ms-auto custom-nav">
                         <Nav.Link href="/" className={styles.navLink}>{HeaderContent.HOME}</Nav.Link>

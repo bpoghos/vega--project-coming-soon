@@ -20,7 +20,76 @@
 
     .custom-language-btn {
       width: 100%;
-      background-color: red;
+    }
+  }
+}
+
+.custom-toggle-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+
+  .pencil-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.active{
+    .pencil {
+      transform-origin: center;
+      animation: rotatePencil 0.5s ease-in-out forwards;
+    }
+    .ruler {
+      transform-origin: center;
+      animation: rotateRuler 0.5s ease-in-out forwards;
+    }
+  }
+  /* Keyframes for rotating pencil and ruler */
+  @keyframes rotatePencil {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @keyframes rotateRuler {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+
+  &.closed {
+    .pencil {
+      transform-origin: center;
+      animation: rotatePencilClose 0.5s ease-in-out forwards;
+    }
+    .ruler {
+      transform-origin: center;
+      animation: rotateRulerClose 0.5s ease-in-out forwards;
+    }
+  }
+  /* Keyframes for rotating pencil and ruler */ 
+  @keyframes rotatePencilClose {
+    0% {
+      transform: rotate(-45deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes rotateRulerClose {
+    0% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(0deg);
     }
   }
 }
