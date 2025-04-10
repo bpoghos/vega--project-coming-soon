@@ -5,17 +5,42 @@
 
 
 
+/* General background setup */
 .background {
-    position: relative;
-    background-image: url("../../../../images/ArmenVahagni/back3.jpg");
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full height for desktop */
 }
+
+/* Fixed background image */
+.image::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full height for desktop */
+  background: url("../../../../images/ArmenVahagni/back3.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: -3;
+  background-attachment: fixed; /* For desktops, fixed background */
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  .image::before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom)); /* Adjust for safe area */
+    background-attachment: scroll; /* Scrollable background for better mobile performance */
+  }
+}
+
+
+
+
 
 .overlay {
     position: absolute;
@@ -80,8 +105,6 @@
         }
     }
 }
-
-
 
 @media screen and (max-height: 550px) and (orientation: landscape) {
     .overlay {

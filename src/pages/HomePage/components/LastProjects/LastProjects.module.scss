@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "../../../../styles/variables/colors.module";
 
 
 .lastProjects {
-    margin-top: 140px;
-    margin-bottom: 160px;
+    position: relative;
+    padding-top: 140px;
+    background-color: $white-color;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    z-index: 1;
 }
 
 .lastProjects h2 {

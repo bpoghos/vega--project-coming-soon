@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 import styles from "./Main.module.scss";
 import { useNavigate } from "react-router";
-import { ButtonTexts, Texts } from "../../../../shared/enum";
+import { ButtonTexts, MainTexts } from "../../../../shared/enum";
 
 const Main = () => {
 
@@ -9,9 +9,10 @@ const Main = () => {
 
     return (
         <section className={styles.background}>
+            <div className={styles.image} />
             <div className={styles.overlay}>
-                <h1>{Texts.MainTitle}</h1>
-                <p><em>{Texts.MainDescription}</em></p>
+                <h1>{MainTexts.TITLE}</h1>
+                <p><em>{MainTexts.DESCRIPTION}</em></p>
                 <Button variant="outline-dark" onClick={() => navigate("/aboutus")}>{ButtonTexts.AboutUs}</Button>
             </div>
         </section>

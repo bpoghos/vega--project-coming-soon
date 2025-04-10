@@ -36,21 +36,23 @@
     height: 100%;
   }
 
-  &.active{
+  &.active {
     .pencil {
       transform-origin: center;
-      animation: rotatePencil 0.5s ease-in-out forwards;
+      animation: rotatePencil 0.3s ease-in-out forwards;
     }
+
     .ruler {
       transform-origin: center;
-      animation: rotateRuler 0.5s ease-in-out forwards;
+      animation: rotateRuler 0.3s ease-in-out forwards;
     }
   }
-  /* Keyframes for rotating pencil and ruler */
+
   @keyframes rotatePencil {
     0% {
       transform: rotate(0deg);
     }
+
     100% {
       transform: rotate(-45deg);
     }
@@ -60,52 +62,21 @@
     0% {
       transform: rotate(0deg);
     }
-    100% {
-      transform: rotate(45deg);
-    }
-  }
 
-  &.closed {
-    .pencil {
-      transform-origin: center;
-      animation: rotatePencilClose 0.5s ease-in-out forwards;
-    }
-    .ruler {
-      transform-origin: center;
-      animation: rotateRulerClose 0.5s ease-in-out forwards;
-    }
-  }
-  /* Keyframes for rotating pencil and ruler */ 
-  @keyframes rotatePencilClose {
-    0% {
-      transform: rotate(-45deg);
-    }
     100% {
-      transform: rotate(0deg);
-    }
-  }
-  @keyframes rotateRulerClose {
-    0% {
       transform: rotate(45deg);
-    }
-    100% {
-      transform: rotate(0deg);
     }
   }
 }
 
-.custom-language-btn{
-
-
-    @media (max-width: 991px) { 
-      margin: 1rem;
-    }
-
-  
+.custom-language-btn {
+  @media (max-width: 991px) {
+    margin: 1rem;
+  }
 }
 
 .custom-nav {
-  @media (max-width: 991px) { 
+  @media (max-width: 991px) {
     display: flex;
     align-items: center;
     padding-bottom: 0.5rem;

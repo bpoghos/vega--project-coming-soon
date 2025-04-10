@@ -48,3 +48,4 @@ export enum ContactContent {
     MOBILE = "Mobile:",
     EMAIL = "Email:"
 }
+
