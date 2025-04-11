@@ -5,6 +5,11 @@
 $titleFontSize: clamp(4rem, 7vw, 12rem);
 $usualFontSize: clamp(1rem, 2.5vw, 1.5rem);
 $subtitleFontSize: clamp(1.2rem, 7vw, 1rem);
+$cardSmallFontSizeBigScreen: clamp(0.125rem, 1vw, 0.875rem);
+$cardSmallFontSizeSmallScreen: clamp(0.75rem, 1vw, 0.875rem);
+$cardTitleFontSizeBigScreen: clamp(1.5rem, 0.5vw, 2rem);
+$cardTitleFontSizeSmallScreen: clamp(1.5rem, 2.5vw, 2rem);
+
 
 $decorativeFont:  "Bebas Neue", sans-serif;
 $secondaryDecorativeFont: "Itim", cursive;

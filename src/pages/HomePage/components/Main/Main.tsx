@@ -12,7 +12,7 @@ const Main = () => {
             <div className={styles.image} />
             <div className={styles.overlay}>
                 <h1>{MainTexts.TITLE}</h1>
-                <p><em>{MainTexts.DESCRIPTION}</em></p>
+                <p><em>{MainTexts.SUBTITLE}</em></p>
                 <Button variant="outline-dark" onClick={() => navigate("/aboutus")}>{ButtonTexts.AboutUs}</Button>
             </div>
         </section>

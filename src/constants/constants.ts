@@ -29,7 +29,7 @@ export enum CategoryName {
 }
 export enum LastProjectsContent {
     TITLE = "Latest Projects",
-    DESCRIPTION = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation"
+    SUBTITLE = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation"
 }
 
 export enum OurClientsContent {
