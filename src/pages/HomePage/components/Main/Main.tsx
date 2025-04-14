@@ -3,9 +3,11 @@ import styles from "./Main.module.scss";
 import { useNavigate } from "react-router";
 import { ButtonTexts, MainTexts } from "../../../../shared/enum";
 
-const Main = () => {
 
-    const navigate = useNavigate()
+const Main = () => {
+    const navigate = useNavigate();
+
+ 
 
     return (
         <section className={styles.background}>
@@ -13,7 +15,9 @@ const Main = () => {
             <div className={styles.overlay}>
                 <h1>{MainTexts.TITLE}</h1>
                 <p><em>{MainTexts.SUBTITLE}</em></p>
-                <Button variant="outline-dark" onClick={() => navigate("/aboutus")}>{ButtonTexts.AboutUs}</Button>
+                <Button variant="outline-dark" onClick={() => navigate("/aboutus")}>
+                    {ButtonTexts.AboutUs}
+                </Button>
             </div>
         </section>
     );

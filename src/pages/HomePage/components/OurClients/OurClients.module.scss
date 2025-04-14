@@ -1,0 +1,44 @@
+@import "../../../../styles/variables/colors.module";
+@import "../../../../styles/variables/fontFamily.module";
+
+.ourClients {
+    position: relative; 
+    padding-top: 8.75rem;
+    background-color: $white-color;
+    text-align: center;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+        padding-top: 5rem;
+    }
+}
+
+.ourClientsTitle {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: $decorativeFont;
+    font-weight: 400;
+    color: $black-color;
+    font-style: normal;
+    margin: 0 1rem;
+}
+
+.ourClientsSubtitle {
+    margin: 0 20%;
+    color: $grey-color;
+}
+
+.card {
+    margin-top: 40px;
+    padding: 10px;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 100%;
+    }
+}
+

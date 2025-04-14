@@ -1,0 +1,66 @@
+@import "../../../../styles/variables/colors.module";
+@import "../../../../styles/variables/fontFamily.module";
+
+.testimonials {
+    position: relative;
+    padding: 8.75rem 0 3.75rem 0;
+    background-color: $white-color;
+    text-align: center;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+        padding-top: 5rem;
+    }
+}
+
+
+.testimonialsTitle {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: $decorativeFont;
+    font-weight: 400;
+    color: $black-color;
+    font-style: normal;
+    margin: 0 1rem;
+}
+
+.testimonialsSubtitle {
+    margin: 0 20%;
+    color: $grey-color;
+}
+
+.card {
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+
+    img {
+        width: 6.25rem;
+        height: 6.25rem;
+        border-radius: 50%;
+    }
+
+    figcaption {
+        padding-top: 1rem;
+        h3 {
+            color: $black-color;
+            margin: 0;
+        }
+
+        span {
+            color: $grey-color;
+        }
+    }
+
+    blockquote {
+        padding-top: 3.125rem;
+        p {
+            color: $black-color;
+            font-weight: 400;
+            line-height: 140%;
+            letter-spacing: 0.02em;
+            width: 75%;
+            margin: 0 auto;
+        }
+    }
+}
+

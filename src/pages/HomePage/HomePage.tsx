@@ -10,8 +10,8 @@ const HomePage = ({ fakeData }: { fakeData: FakeDataEntry[] }) => {
         <main role="main" className={styles.homePage}>
             <Main />
             <LastProjects fakeData={fakeData} />
-            {/* <OurClients /> */}
-            {/* <Testimonials /> */}
+            <OurClients />
+            <Testimonials />
         </main>
     )
 }

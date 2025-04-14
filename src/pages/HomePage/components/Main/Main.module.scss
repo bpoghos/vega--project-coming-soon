@@ -9,7 +9,7 @@
 .background {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full height for desktop */
+  height: 100dvh
 }
 
 /* Fixed background image */
@@ -19,7 +19,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Full height for desktop */
+  height: 100svh;
   background: url("../../../../images/ArmenVahagni/back3.jpg") no-repeat center center;
   background-size: cover;
   z-index: -3;
@@ -43,7 +43,7 @@
 
 
 .overlay {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -57,7 +57,7 @@
         letter-spacing: 0.02em;
         font-weight: bold;
         color: $primary-color;
-        z-index: 2;
+        z-index: -1;
 
         &::before {
             content: "";
@@ -81,7 +81,7 @@
         font-family: $secondaryDecorativeFont;
         font-weight: 400;
         font-style: italic;
-        z-index: 2;
+        z-index: -1;
     }
 
     button {

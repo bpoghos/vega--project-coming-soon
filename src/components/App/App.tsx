@@ -1,9 +1,9 @@
 import RootRouter from "../../routes/RootRouter";
 import Footer from "../Footer/Footer";
 import Header from "../Header";
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
-import styles from "./App.module.css"
+import styles from "./App.module.scss"
 
 
 import araik1 from "../../images/Araik/1.jpg"
@@ -309,6 +309,9 @@ const App = () => {
     },
   ]
 
+
+
+
   return (
     <div className={styles.app}>
       <Header scrollToFooter={scrollToFooter} />
@@ -319,36 +322,3 @@ const App = () => {
 }
 
 export default App
-
-
-
-
-
-
-
-
-
-
- // const category = [
-  //   {
-  //     id: 1,
-  //     name: CategoryName.RESIDENTAL,
-  //     projects: [
-
-  //     ]
-  //   },
-  //   {
-  //     id: 2,
-  //     name: CategoryName.PUBLIC,
-  //     projects: [
-
-  //     ]
-  //   },
-  //   {
-  //     id: 3,
-  //     name: CategoryName.PUBLIC,
-  //     projects: [
-
-  //     ]
-  //   },  
-  // ]
