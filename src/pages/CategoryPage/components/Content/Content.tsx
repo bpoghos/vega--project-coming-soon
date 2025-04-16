@@ -1,12 +1,18 @@
 import { Container } from "react-bootstrap"
 import styles from "./Content.module.css"
-import { CategoryName } from "../../../../constants/constants"
+import { useParams } from "react-router"
+import { CategoryData, categoryDataArray } from "../../../../components/App/data"
 
 const Content: React.FC = () => {
+
+    const params = useParams<{ id: string }>();
+    const categoryId = params.id;
+    const findParams = categoryDataArray.find((item: CategoryData) => item.link === categoryId);
+
     return (
         <Container className={styles.content}>
-            <h1>{CategoryName.RESIDENTAL}</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation</p>
+            <h1>{findParams?.title}</h1>
+            <p>{findParams?.description}</p>
         </Container>
     )
 }

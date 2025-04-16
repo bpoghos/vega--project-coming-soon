@@ -1,13 +1,13 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { LastProjectsContent } from "../../../../constants/constants";
-import { FakeDataEntry } from "../../../../components/App/App";
+// import { FakeDataEntry } from "../../../../components/App/App";
 import { useNavigate } from "react-router";
 import styles from "./LastProjects.module.scss";
 
-const LastProjects = ({ fakeData }: { fakeData: FakeDataEntry[] }) => {
+const LastProjects = (/* { fakeData }: { fakeData: FakeDataEntry[] } */) => {
   const navigate: any = useNavigate();
 
-  const limitedData = fakeData.slice(0, 3);
+  const limitedData: { id: string; images: string[]; title: string }[] = [] /* fakeData.slice(0, 3); */
 
   return (
     <section className={styles.lastProjects}>

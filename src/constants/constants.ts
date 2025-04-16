@@ -19,8 +19,7 @@ export enum FooterContent {
     DATE = "2024"
 }
 export enum CategoryName {
-    RESIDENTAL = "Our Projects",
-    // RESIDENTAL = "Residential Structures",
+    RESIDENTAL = "Residential Structures",
     PUBLIC = "Public Structures",
     URBAN = "Urban Development Projects",
     PRODACTION = "Production Buildings",

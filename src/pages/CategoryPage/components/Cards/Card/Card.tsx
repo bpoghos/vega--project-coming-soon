@@ -1,30 +1,26 @@
 import { Col } from "react-bootstrap"
 import styles from "./Card.module.css"
 import { useNavigate } from "react-router"
+import { NewDataProps } from "../../../../../components/App/data"
 
 
 
 
-const Card = ({ test, project }: { test: any, project: any }) => {
+const Card = ({ test, projects }: { test: string[], projects: NewDataProps }) => {
 
     const navigate: any = useNavigate()  
-console.log(project);
+console.log(projects);
 
+console.log(test[0]);
 
     return (
-        <Col lg={4} sm={12} xs={12} onClick={() => navigate(`/projects/${project.id}`)}>
+        <Col lg={4} sm={12} xs={12} onClick={() => navigate(`/projects/${projects.id}`)}>
             <div className={styles.card}>
-                <img alt="" src={test} />
+                <img alt="" src={test[0]} />
                 <div className={styles.hover}>
                     <div className={styles.contentContainer}>
                         <div>
-                            <p className={styles.title}>{project.title}</p>
-                            {/* <p className={styles.description}>Lorem ipsum dolor sit amet consectetur adipiscing elit sed
-                                tempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsum
-                                dolor sit amet consectetur adipiscing elit sed
-                                magna aliqua enim minim veniam exercitation ipsum
-                                dolor sit amet
-                            </p> */}
+                            <p className={styles.title}>{projects.title}</p>
                         </div>
                     </div>
                 </div>
