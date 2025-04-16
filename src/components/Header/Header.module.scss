@@ -1,36 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import "../../styles/variables/colors.module";
+@import "../../styles/variables/fontFamily.module";
 
 
 .navBar {
     position: relative;
-    background-color: #FFFBF8;
-    font-size: 24px;
-    border-bottom: 0.5px solid #d4d4d4;
-    font-family: "Bebas Neue", sans-serif;
+    background-color: $white-color;
+    font-size: 1.5rem;
+    border-bottom: 0.5px solid $grey-color;
+    font-family: $decorativeFont;
     font-weight: 400;
     font-style: normal;
+
+    .navLink {
+        color: $black-color;
+        margin: auto 2.5rem auto 0;
+        padding: 0.5rem;
+    }
+
+    .navLink:hover {
+        color: $primary-color;
+    }
 }
 
 .logo {
-    width: 100px;
+    width: 6.25rem;
 }
-
-.navBar .navLink {
-    color: #000;
-    margin: auto 40px auto 0;
-    padding: 8px;
-}
-
-
-.navBar .navLink:hover {
-    color: #ffcd07;
-}
-
-.navDropdownItem {
-    border-radius: 5px;
-    font-size: 20px;
-}
-
 
 .languageBtn {
     max-width: 2rem;

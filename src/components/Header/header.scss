@@ -1,5 +1,5 @@
 @import "../../styles/variables/colors.module";
-
+@import "../../styles/variables/fontFamily.module";
 
 .custom-collapse {
   @media (max-width: 991px) {
@@ -23,6 +23,120 @@
     }
   }
 }
+
+
+.dropdownWrapper {
+  position: relative;
+  display: inline-block;
+
+  @media (max-width: 991px) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.dropdown-toggle {
+  color: $black-color !important;
+  text-decoration: none !important;
+  font-family: $decorativeFont !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: 1.5rem !important;
+
+  &:hover,
+  &:active {
+    color: $primary-color !important;
+  }
+
+  &:focus {
+    color: $black-color !important;
+  }
+
+  &:focus-visible {
+    color: $black-color !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  &::after {
+    display: none !important;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 1.5rem !important;
+    padding: 0.5rem 0 !important;
+    margin: 0 !important;
+  }
+}
+
+// Dropdown menu animation
+.dropdown-menu {
+  position: absolute !important;
+  top: 110% !important;
+  left: 50% !important;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 10 !important;
+  background-color: $white-color !important;
+  border-radius: 0 0 0.5rem 0.5rem !important;
+  animation: openMenu 0.5s ease forwards;
+  padding: 1rem 0.5rem !important;
+
+
+ 
+  @keyframes openMenu {
+    0% {
+      transform: translateX(-50%) scaleY(0);
+      // opacity: 0;
+      visibility: hidden;
+    }
+    60% {
+      transform: translateX(-50%) scaleY(1.1);
+      // opacity: 0.5;
+      visibility: visible;
+    }
+    100% {
+      transform: translateX(-50%) scaleY(1);
+      // opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .dropdown-item {
+    color: $black-color;
+    font-size: 1.375rem !important;
+    line-height: 160%;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-color !important;
+      background-color: transparent !important;
+    }
+  }
+
+  @media (max-width: 991px) {
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) scaleY(0);
+    border-radius: 0.5rem !important;
+  }
+}
+
+// 🔥 This part makes it animate in!
+.dropdown.show .dropdown-menu {
+  transform: translateX(-50%) scaleY(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+
 
 .custom-toggle-icon {
   width: 2.5rem;

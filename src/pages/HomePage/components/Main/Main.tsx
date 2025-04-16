@@ -2,12 +2,23 @@ import { Button } from "react-bootstrap";
 import styles from "./Main.module.scss";
 import { useNavigate } from "react-router";
 import { ButtonTexts, MainTexts } from "../../../../shared/enum";
+import { useEffect } from "react";
+
 
 
 const Main = () => {
     const navigate = useNavigate();
 
- 
+    useEffect(() => {
+        const setVh = () => {
+          const vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+      
+        setVh();
+        window.addEventListener('resize', setVh);
+        return () => window.removeEventListener('resize', setVh);
+      }, []);
 
     return (
         <section className={styles.background}>

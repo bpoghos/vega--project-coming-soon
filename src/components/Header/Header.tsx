@@ -1,7 +1,7 @@
-import { HeaderContent } from '../../constants/constants'
+import { CategoryName, HeaderContent } from '../../constants/constants'
 import englishLng from '../../assets/language/english.language.jpeg'
 import armenianLng from '../../assets/language/armenian.language.png'
-import { Container, Nav, Navbar } from "react-bootstrap"
+import { Container, Dropdown, DropdownButton, DropdownItem, Nav, Navbar } from "react-bootstrap"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router"
 import logo from '../../assets/logo/logo.png'
@@ -57,8 +57,40 @@ const Header = ({ scrollToFooter }: { scrollToFooter: any }) => {
                 <Navbar.Collapse id="basic-navbar-nav" className='custom-collapse'>
                     <Nav className="ms-auto custom-nav">
                         <Nav.Link href="/" className={styles.navLink}>{HeaderContent.HOME}</Nav.Link>
-                        <Nav.Link href="/projects" className={styles.navLink}>{HeaderContent.PROJECTS}</Nav.Link>
+
+
+                        <div className="dropdownWrapper">
+                            <DropdownButton
+                                id="dropdown-basic-button"
+                                title={HeaderContent.PROJECTS}
+                                variant="link"
+                                className={`dropdown-toggle ${styles.navLink} ${styles.dropdownToggle}`}
+                            >
+                                <Dropdown.Item href="/projects/residential" className={styles.dropdownLink}>
+                                    {CategoryName.RESIDENTAL}
+                                </Dropdown.Item>
+                                <Dropdown.Item href="/projects/commercial" className={styles.dropdownLink}>
+                                    {CategoryName.PUBLIC}
+                                </Dropdown.Item>
+                                <Dropdown.Item href="/projects/landscaping" className={styles.dropdownLink}>
+                                    {CategoryName.URBAN}
+                                </Dropdown.Item>
+                                <Dropdown.Item href="/projects/interior" className={styles.dropdownLink}>
+                                    {CategoryName.PRODACTION}
+                                </Dropdown.Item>
+                                <Dropdown.Item href="/projects/renovation" className={styles.dropdownLink}>
+                                    {CategoryName.RECONSTRACTION}
+                                </Dropdown.Item>
+                                <Dropdown.Item href="/projects/small" className={styles.dropdownLink}>
+                                    {CategoryName.SMALL}
+                                </Dropdown.Item>
+                            </DropdownButton>
+                        </div>
+                        {/* <Nav.Link href="/projects" className={styles.navLink}>{HeaderContent.PROJECTS}</Nav.Link> */}
+
                         <Nav.Link onClick={scrollToFooter} className={styles.navLink}>{HeaderContent.CONTACTS}</Nav.Link>
+
+
 
                         <div className={`custom-language-btn ${styles.languageBtn}`} onClick={handleLanguageClick}>
                             <img alt="" src={isLanguageClicked ? armenianLng : englishLng} />
