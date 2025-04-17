@@ -1,37 +1,7 @@
-@import "../../../../styles/variables/colors.module";
-@import "../../../../styles/variables/fontFamily.module";
-
-
-
-.lastProjects {
-    position: relative;
-    padding-top: 8.75rem;
-    background-color: $white-color;
-    text-align: center;
-    z-index: 1;
-
-    @media screen and (max-width: 768px) {
-        padding-top: 5rem;  
-    }
-
-    .lastProjectsTitle {
-        font-size: 50px;
-        text-transform: uppercase;
-        font-family: $decorativeFont;
-        font-weight: 400;
-        color: $black-color;
-        font-style: normal;
-        margin: 0 1rem;
-    }
-
-    .lastProjectsSubtitle {
-        margin: 0 20%;
-        color: $grey-color;
-    }
-}
+@import "../../../../../styles/variables/colors.module";
+@import "../../../../../styles/variables/fontFamily.module";
 
 .card {
-    margin-top: 40px;
     border-radius: 0.5rem;
 
     .cardImageWrapper {
@@ -50,7 +20,7 @@
 
         .hoverEffect {
             position: absolute;
-            top: 100%; // start hidden below
+            top: 100%;
             left: 0;
             width: 100%;
             height: 100%;

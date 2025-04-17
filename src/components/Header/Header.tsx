@@ -68,9 +68,9 @@ const Header = ({ scrollToFooter }: { scrollToFooter: any }) => {
                 variant="link"
                 className={`dropdown-toggle ${styles.navLink} ${styles.dropdownToggle}`}
               >
-                {categoryDataArray.map((item: CategoryData, index) => (
-                  <Dropdown.Item key={index} href={`/category/${item.link}`} className={styles.dropdownLink}>
-                    {item.title}
+                {categoryDataArray.map((category: CategoryData, index) => (
+                  <Dropdown.Item key={index} href={`/category/${category.link}`} className={styles.dropdownLink}>
+                    {category.title}
                   </Dropdown.Item>
                 ))}
               </DropdownButton>

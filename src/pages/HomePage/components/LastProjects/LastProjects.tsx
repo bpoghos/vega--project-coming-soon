@@ -4,10 +4,10 @@ import { LastProjectsContent } from "../../../../constants/constants";
 import { useNavigate } from "react-router";
 import styles from "./LastProjects.module.scss";
 
-const LastProjects = (/* { fakeData }: { fakeData: FakeDataEntry[] } */) => {
+const LastProjects = () => {
   const navigate: any = useNavigate();
 
-  const limitedData: { id: string; images: string[]; title: string }[] = [] /* fakeData.slice(0, 3); */
+  const limitedData: { id: string; images: string[]; title: string }[] = [] 
 
   return (
     <section className={styles.lastProjects}>

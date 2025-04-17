@@ -1,32 +1,41 @@
-import { Col } from "react-bootstrap"
-import styles from "./Card.module.css"
-import { useNavigate } from "react-router"
-import { NewDataProps } from "../../../../../components/App/data"
+import { Col, Button } from "react-bootstrap";
+import styles from "./Card.module.scss";
+import { useNavigate, useParams } from "react-router";
+import { NewDataProps } from "../../../../../components/App/data";
 
+const Card = ({ projects }: { projects: NewDataProps }) => {
+  const params = useParams<{ id: string }>();
+  const categoryId = params.id;
+  const navigate = useNavigate();
 
-
-
-const Card = ({ test, projects }: { test: string[], projects: NewDataProps }) => {
-
-    const navigate: any = useNavigate()  
-console.log(projects);
-
-console.log(test[0]);
-
-    return (
-        <Col lg={4} sm={12} xs={12} onClick={() => navigate(`/projects/${projects.id}`)}>
-            <div className={styles.card}>
-                <img alt="" src={test[0]} />
-                <div className={styles.hover}>
-                    <div className={styles.contentContainer}>
-                        <div>
-                            <p className={styles.title}>{projects.title}</p>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <Col lg={4} md={4} sm={12}>
+      <article className={styles.card}>
+        <div className={styles.cardImageWrapper}>
+          <img
+            alt=""
+            src={projects.profileImage}
+            className={styles.cardImage}
+          />
+          <div className={styles.hoverEffect}>
+            <div className={styles.hoverEffectText}>
+              <h3 className={styles.hoverTitle}>{projects.title}</h3>
+              <p className={styles.hoverText}>{projects.subtitle}</p>
+              <hr className={styles.separator} />
+              <Button
+                className={styles.button}
+                onClick={(e) => {
+                  navigate(`/category/${categoryId}/single/${projects.id}`);
+                }}
+              >
+                Learn More
+              </Button>
             </div>
-        </Col>
-    )
-}
+          </div>
+        </div>
+      </article>
+    </Col>
+  );
+};
 
-export default Card
+export default Card;

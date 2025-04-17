@@ -1,0 +1,47 @@
+@import "../../../../styles/variables/fontFamily.module";
+@import "../../../../styles/variables/colors.module";
+
+
+.cards {
+    position: relative;
+    padding: 8.75rem 0; 
+    background-color: $white-color;
+    text-align: center;
+    z-index: 1;
+
+    .title {
+        font-size: 50px;
+        text-transform: uppercase;
+        font-family: $decorativeFont;
+        font-weight: 400;
+        color: $black-color;
+        font-style: normal;
+        margin: 0 1rem;
+    }
+
+    .description {
+        margin-bottom: 2.5rem;
+        color: $grey-color;
+    }
+
+    .buttonWrapper{
+        margin-top: 2.5rem;
+
+        button {
+            font-family: $decorativeFont;
+            font-size: 1.5rem;
+            padding: 1em 3em;
+            background-color: $grey-color;
+            border-radius: 0.5rem;
+            color: $white-color;
+            border: none;
+            transition: all 0.5s ease;
+
+            &:hover,
+            &:active {
+                background-color: $primary-color;
+            }
+        }
+    }
+
+}
