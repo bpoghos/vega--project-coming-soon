@@ -4,7 +4,7 @@ import armenianLng from '../../assets/language/armenian.language.png';
 import { Container, Dropdown, DropdownButton, Nav, Navbar } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-import logo from '../../assets/logo/logo.png';
+import logo from '../../assets/logo/logo dark.png';
 import { rulerAnsPencil } from '../../shared/svg/svg';
 import styles from "./Header.module.scss";
 import "./header.scss";
@@ -46,9 +46,9 @@ const Header = ({ scrollToFooter }: { scrollToFooter: any }) => {
 
 
   return (
-    <Navbar variant="light" expand="lg" className={styles.navBar} fixed="top">
-      <Container>
-        <Navbar.Brand href="/">
+    <Navbar variant="light" expand="lg" className={styles.navBar} >
+      <Container className='p-0'>
+        <Navbar.Brand href="/" className='p-0'>
           <img className={styles.logo} src={logo} alt="logo" />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -58,7 +58,7 @@ const Header = ({ scrollToFooter }: { scrollToFooter: any }) => {
           {rulerAnsPencil}
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav" className='custom-collapse'>
-          <Nav className="ms-auto custom-nav">
+          <Nav className="m-auto custom-nav">
             <Nav.Link href="/" className={styles.navLink}>{HeaderContent.HOME}</Nav.Link>
 
             <div className="dropdownWrapper">
@@ -78,10 +78,12 @@ const Header = ({ scrollToFooter }: { scrollToFooter: any }) => {
 
             <Nav.Link onClick={scrollToFooter} className={styles.navLink}>{HeaderContent.CONTACTS}</Nav.Link>
 
-            <div className={`custom-language-btn ${styles.languageBtn}`} onClick={handleLanguageClick}>
-              <img alt="" src={isLanguageClicked ? armenianLng : englishLng} />
-            </div>
           </Nav>
+            <div className={`custom-language-btn ${styles.languageBtn}`} onClick={handleLanguageClick}>
+                <span className={styles.languageText}>
+                  {isLanguageClicked ? "ARM" : "ENG"}
+                </span>
+            </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

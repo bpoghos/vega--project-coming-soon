@@ -36,12 +36,14 @@
 }
 
 .dropdown-toggle {
-  color: $black-color !important;
+  color: $white-color !important;
   text-decoration: none !important;
   font-family: $decorativeFont !important;
   font-weight: 400 !important;
   font-style: normal !important;
   font-size: 1.5rem !important;
+  margin: auto 6.25rem;
+  padding: 0 !important;
 
   &:hover,
   &:active {

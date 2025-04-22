@@ -3,6 +3,7 @@ import styles from "./Main.module.scss";
 import { useNavigate } from "react-router";
 import { ButtonTexts, MainTexts } from "../../../../shared/enum";
 import { useEffect } from "react";
+import { arrowDown } from "../../../../shared/svg/svg";
 
 
 
@@ -25,10 +26,11 @@ const Main = () => {
             <div className={styles.image} />
             <div className={styles.overlay}>
                 <h1>{MainTexts.TITLE}</h1>
-                <p><em>{MainTexts.SUBTITLE}</em></p>
+                <div className={styles.arrowDownContainer}>{arrowDown}</div>
+                {/* <p><em>{MainTexts.SUBTITLE}</em></p>
                 <Button variant="outline-dark" onClick={() => navigate("/aboutus")}>
                     {ButtonTexts.AboutUs}
-                </Button>
+                </Button> */}
             </div>
         </section>
     );
