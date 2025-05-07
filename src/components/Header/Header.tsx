@@ -44,7 +44,6 @@ const Header = ({ scrollToFooter }: { scrollToFooter: any }) => {
     };
   }, [location.pathname]);
 
-
   return (
     <Navbar variant="light" expand="lg" className={styles.navBar} >
       <Container className='p-0'>

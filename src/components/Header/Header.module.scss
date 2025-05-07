@@ -11,8 +11,10 @@
     font-weight: 400;
     font-style: normal;
     padding: 3rem 10.625rem 2rem 10.625rem !important;
+    opacity: 0;
     z-index: 5;
     animation:  fadeIn 1s ease forwards;
+    animation-delay: 1.2s;
 
     .navLink {
         color: $white-color;

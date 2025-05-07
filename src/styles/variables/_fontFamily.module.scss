@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Itim&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap');
 
 // FONT SIZE
 $titleFontSize: clamp(5rem, 10vw, 10.625rem);
@@ -15,6 +16,7 @@ $cardTitleFontSizeSmallScreen: clamp(1.5rem, 2.5vw, 2rem);
 $decorativeFont:  "Bebas Neue", sans-serif;
 $secondaryDecorativeFont: "Itim", cursive;
 $mainFont: "Lexend", sans-serif;
+$secondaryFont: "Hanken Grotesk", sans-serif;
 
 
 

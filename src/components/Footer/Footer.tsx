@@ -1,6 +1,6 @@
 import { Container, Row, Col, Navbar, NavLink } from "react-bootstrap";
 import logo from "../../assets/logo/logo dark.png";
-import styles from "./Footer.module.css";
+import styles from "./Footer.module.scss";
 import { ContactContent, FooterContent } from "../../constants/constants";
 import { useNavigate } from "react-router";
 import { FaViber, FaWhatsapp } from "react-icons/fa6";
@@ -12,7 +12,7 @@ const Footer= ({footerRef}:{footerRef:any}) => {
     const navigate = useNavigate()
 
     return (
-        <Navbar bg="black" variant="dark" className={styles.footer} ref={footerRef}>
+        <footer  className={styles.footer} ref={footerRef}>
             <Container className="d-block">
                 <Row className={styles.row}>
                     <Col lg={3} md={3} sm={6} xs={12} className={styles.logoContainer}>
@@ -45,7 +45,7 @@ const Footer= ({footerRef}:{footerRef:any}) => {
                     <p> &copy; {FooterContent.DATE}</p>
                 </div>
             </Container>
-        </Navbar>
+        </footer>
     );
 };
 

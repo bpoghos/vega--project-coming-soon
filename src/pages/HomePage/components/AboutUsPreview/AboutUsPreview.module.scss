@@ -1,0 +1,125 @@
+@import '../../../../styles/variables/colors.module.scss';
+@import '../../../../styles/variables/fontFamily.module.scss';
+
+.aboutUsPreview {
+    position: relative;
+    background-color: $white-color;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+    background-image: url('./background/background-image.svg');
+    background-repeat: no-repeat;
+    background-size: contain; // ✅ this is key
+    background-position: center;
+
+
+    .content{
+        text-align: center;
+        width: 60%;
+
+        .description{
+            color: $black-color;
+            font-family: $secondaryFont;
+            font-size: 2.5rem;
+            font-weight: 400;
+            font-style: italic;
+            line-height: 140%;
+            margin-bottom: 180px;
+        }
+
+        .button{
+            font-family: $decorativeFont;
+            font-size: 2rem;
+            padding: 1.875rem 6.25rem;
+            background: none;
+            border: 1px solid $black-color;
+            border-radius: 0;
+            color: $black-color;
+
+            &:hover{
+                background-color: $primary-color;
+                color: $white-color;
+                border-color: $primary-color;
+            }
+            &:active{
+                background-color: $primary-color;
+                color: $white-color;
+                border-color: $primary-color;
+            }
+            &:focus{
+                background-color: $primary-color;
+                color: $white-color;
+                border-color: $primary-color;
+            }
+        }
+    }
+
+
+        @media screen and (max-width: 991px) {
+            background-image: url('./background/background-tablet.svg');
+            background-repeat: no-repeat;
+            background-size: cover; // ✅ this is key
+            background-position: center;
+            padding: 0 6rem;
+
+            .content{
+                width: 100%;
+        
+                .description{
+                    font-size: 2rem;
+                }
+        
+                .button{
+                    font-size: 2rem;
+                    padding: 1.625rem 5.625rem;
+                }
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            background-image: url('./background/background-phone.svg');
+            background-repeat: no-repeat;
+            background-size: cover; // ✅ this is key
+            background-position: center;
+            padding: 0 1rem;
+
+            .content{
+                width: 100%;
+        
+                .description{
+                    font-size: 1.5rem;
+                }
+        
+                .button{
+                    font-size: 1.5rem;
+                    padding: 1.375rem 4.75rem;
+                }
+            }
+        }
+
+        @media screen and (max-width: 540px) {
+
+            background-size: contain; // ✅ this is key
+
+            .content{
+                width: 100%;
+        
+                .description{
+                    font-size: 1.5rem;
+                }
+        
+                .button{
+                }
+            }
+            
+        }
+
+
+  }
+
+  
+  
