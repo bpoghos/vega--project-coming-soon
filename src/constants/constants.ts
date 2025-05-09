@@ -19,8 +19,7 @@ export enum FooterContent {
     DATE = "2024"
 }
 export enum CategoryName {
-    RESIDENTAL = "Our Projects",
-    // RESIDENTAL = "Residential Structures",
+    RESIDENTAL = "Residential Structures",
     PUBLIC = "Public Structures",
     URBAN = "Urban Development Projects",
     PRODACTION = "Production Buildings",
@@ -29,7 +28,7 @@ export enum CategoryName {
 }
 export enum LastProjectsContent {
     TITLE = "Latest Projects",
-    DESCRIPTION = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation"
+    SUBTITLE = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation"
 }
 
 export enum OurClientsContent {
@@ -48,3 +47,4 @@ export enum ContactContent {
     MOBILE = "Mobile:",
     EMAIL = "Email:"
 }
+

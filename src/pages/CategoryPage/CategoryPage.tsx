@@ -1,13 +1,13 @@
-import { FakeDataEntry } from "../../components/App/App"
-import styles from "./CategoryPage.module.css"
-import { Cards, Content } from "./components"
+// import { FakeDataEntry } from "../../components/App/App"
+import Cards from "./components/Cards/Cards"
+import styles from "./CategoryPage.module.scss"
 
-const CategoryPage = ({fakeData}:{fakeData: FakeDataEntry[]}) => {
+
+const CategoryPage = (/* {fakeData}:{fakeData: FakeDataEntry[]} */) => {
     return (
-        <div className={styles.category}>
-            <Content />
-            <Cards fakeData={fakeData}/>
-        </div>
+        <main className={styles.category}>
+            <Cards/>
+        </main>
     )
 }
 

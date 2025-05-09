@@ -1,24 +1,36 @@
 import { Button } from "react-bootstrap";
-import styles from "./Main.module.css";
+import styles from "./Main.module.scss";
 import { useNavigate } from "react-router";
-import back from "../../../../images/ArmenVahagni/back3.jpg"
+import { ButtonTexts, MainTexts } from "../../../../shared/enum";
+import { useEffect } from "react";
 
-const Main: React.FC = () => {
 
-    const navigate = useNavigate()
+
+const Main = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const setVh = () => {
+          const vh = window.innerHeight * 0.01;
+          document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+      
+        setVh();
+        window.addEventListener('resize', setVh);
+        return () => window.removeEventListener('resize', setVh);
+      }, []);
 
     return (
-        <div className={styles.background}>
+        <section className={styles.background}>
+            <div className={styles.image} />
             <div className={styles.overlay}>
-                {/* <h1>VEGA PROJECT</h1> */}
-                <p>"We create architecture that stands the test of time and elevates the way people live and work. Our modern, innovative spaces reflect your vision and needs, combining beauty and purpose to make a lasting impact."</p>
-                {/* <Button variant="outline-dark" onClick={() => navigate("/aboutus")}>About us</Button> */}
+                <h1>{MainTexts.TITLE}</h1>
+                <p><em>{MainTexts.SUBTITLE}</em></p>
+                <Button variant="outline-dark" onClick={() => navigate("/aboutus")}>
+                    {ButtonTexts.AboutUs}
+                </Button>
             </div>
-            <img
-                alt="background"
-                src={back}
-            />
-        </div>
+        </section>
     );
 };
 

@@ -1,18 +1,16 @@
-import { FakeDataEntry } from "../../components/App/App"
 import { LastProjects, Main, OurClients, Testimonials } from "./components"
-import styles from "./HomePage.module.css"
+import styles from "./HomePage.module.scss"
 
 
-const HomePage = ({fakeData}: {fakeData:FakeDataEntry[]}) => {
-
+const HomePage = () => {
 
     return (
-        <div>
+        <main role="main" className={styles.homePage}>
             <Main />
-            <LastProjects fakeData={fakeData}/>
-            {/* <OurClients /> */}
-            {/* <Testimonials /> */}
-        </div>
+            <LastProjects /* fakeData={fakeData} */ />
+            <OurClients />
+            <Testimonials />
+        </main>
     )
 }
 

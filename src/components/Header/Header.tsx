@@ -1,92 +1,91 @@
-import styles from "./Header.module.css"
-import logo from './images/logo.png'
-import { CategoryName, HeaderContent } from '../../constants/constants'
-import englishLng from './images/english.language.jpeg'
-import armenianLng from './images/armenian.language.png'
-import russianLng from './images/russian.language.webp'
-import { Container, Dropdown, DropdownMenu, DropdownToggle, Nav, Navbar } from "react-bootstrap"
-import { useEffect, useState } from "react"
-import { useLocation } from "react-router"
+import { CategoryName, HeaderContent } from '../../constants/constants';
+import englishLng from '../../assets/language/english.language.jpeg';
+import armenianLng from '../../assets/language/armenian.language.png';
+import { Container, Dropdown, DropdownButton, Nav, Navbar } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router";
+import logo from '../../assets/logo/logo.png';
+import { rulerAnsPencil } from '../../shared/svg/svg';
+import styles from "./Header.module.scss";
+import "./header.scss";
+import { CategoryData, categoryDataArray } from '../App/data';
+
+const Header = ({ scrollToFooter }: { scrollToFooter: any }) => {
+  const [isLanguageClicked, setIsLanguageClicked] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
 
 
+  
 
-const Header = ({scrollToFooter}:{scrollToFooter:any}) => {
-    // const [isLanguageOpen, setIsLanguageOpen] = useState<boolean>(false);
-    const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const handleToggle = () => {
+    setIsOpen(prev => !prev);
+  };
 
+  const handleLanguageClick = () => {
+    setIsLanguageClicked((prevState) => !prevState);
+  };
 
+  const location = useLocation();
 
-    // const handleLanguageClick = () => {
-    //     setIsLanguageOpen((prevState) => !prevState);
-    // };
-
-    const location = useLocation();
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (location.pathname === "/") {
-                const scrollPosition = window.scrollY;
-                setIsScrolled(scrollPosition > 0);
-            } else {
-                setIsScrolled(false); // No scroll effect for other routes
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [location.pathname]);
-
-    const scrollStyle = {
-        backgroundColor: location.pathname === "/"
-            ? (isScrolled ? "#FFFBF8" : "#e9e9e9db")
-            : "#FFFBFB" 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (location.pathname === "/") {
+        const scrollPosition = window.scrollY;
+        setIsScrolled(scrollPosition > 0);
+      } else {
+        setIsScrolled(false); 
+      }
     };
 
-    return (
-        <Navbar variant="light" style={scrollStyle} expand="lg" className={styles.navBar} fixed="top">
-            <Container>
-                <Navbar.Brand href="/">
-                    <img className={styles.logo} src={logo} alt="logo" />
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Nav.Link href="/" className={styles.navLink}>{HeaderContent.HOME}</Nav.Link>
-                        <Nav.Link href="/projects" className={styles.navLink}>{HeaderContent.PROJECTS}</Nav.Link>
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [location.pathname]);
 
-                        {/* <Dropdown className={styles.dropdown}>
-                            <DropdownToggle variant="link" className={styles.dropdownToggle}  href="/category">
-                                {HeaderContent.PROJECTS}
-                            </DropdownToggle>
-                            <DropdownMenu className={styles.dropdownMenu} style={scrollStyle}>
-                                <Dropdown.Item href="/category" className={styles.dropdownItem}>{CategoryName.RESIDENTAL}</Dropdown.Item>
-                                <Dropdown.Item href="/category" className={styles.dropdownItem}>{CategoryName.PUBLIC}</Dropdown.Item>
-                                <Dropdown.Item href="/category" className={styles.dropdownItem}>{CategoryName.URBAN}</Dropdown.Item>
-                                <Dropdown.Item href="/category" className={styles.dropdownItem}>{CategoryName.PRODACTION}</Dropdown.Item>
-                                <Dropdown.Item href="/category" className={styles.dropdownItem}>{CategoryName.RECONSTRACTION}</Dropdown.Item>
-                                <Dropdown.Item href="/category" className={styles.dropdownItem}>{CategoryName.SMALL}</Dropdown.Item>
-                            </DropdownMenu>
-                        </Dropdown> */}
 
-                        <Nav.Link onClick={scrollToFooter} className={styles.navLink}>{HeaderContent.CONTACTS}</Nav.Link>
-                        {/* <div className={styles.languageBtn} onClick={handleLanguageClick}>
-                            <img alt="" src={englishLng} />
-                            {isLanguageOpen && <div className={styles.languageDropdown} style={scrollStyle}>
-                                <div><img alt="" src={armenianLng} /></div>
-                                <div><img alt="" src={russianLng} /></div>
-                            </div>}
-                        </div> */}
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    );
+  return (
+    <Navbar variant="light" expand="lg" className={styles.navBar} fixed="top">
+      <Container>
+        <Navbar.Brand href="/">
+          <img className={styles.logo} src={logo} alt="logo" />
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={handleToggle}
+          className={`custom-toggle-icon ${isOpen ? "active" : ""}`}>
+          {rulerAnsPencil}
+        </Navbar.Toggle>
+        <Navbar.Collapse id="basic-navbar-nav" className='custom-collapse'>
+          <Nav className="ms-auto custom-nav">
+            <Nav.Link href="/" className={styles.navLink}>{HeaderContent.HOME}</Nav.Link>
+
+            <div className="dropdownWrapper">
+              <DropdownButton
+                id="dropdown-basic-button"
+                title={HeaderContent.PROJECTS}
+                variant="link"
+                className={`dropdown-toggle ${styles.navLink} ${styles.dropdownToggle}`}
+              >
+                {categoryDataArray.map((category: CategoryData, index) => (
+                  <Dropdown.Item key={index} href={`/category/${category.link}`} className={styles.dropdownLink}>
+                    {category.title}
+                  </Dropdown.Item>
+                ))}
+              </DropdownButton>
+            </div>
+
+            <Nav.Link onClick={scrollToFooter} className={styles.navLink}>{HeaderContent.CONTACTS}</Nav.Link>
+
+            <div className={`custom-language-btn ${styles.languageBtn}`} onClick={handleLanguageClick}>
+              <img alt="" src={isLanguageClicked ? armenianLng : englishLng} />
+            </div>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 };
 
-export default Header
-
-
-
-
+export default Header;

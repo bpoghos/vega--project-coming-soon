@@ -1,9 +1,9 @@
 import RootRouter from "../../routes/RootRouter";
 import Footer from "../Footer/Footer";
 import Header from "../Header";
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
-import styles from "./App.module.css"
+import styles from "./App.module.scss"
 
 
 import araik1 from "../../images/Araik/1.jpg"
@@ -102,30 +102,7 @@ import mommy1 from "../../images/Mommy/1.jpg"
 import mommy2 from "../../images/Mommy/2.jpg"
 import mommyProfile from "../../images/Mommy/profile.jpg"
 
-
-
-
-
-
-
-
-
-
-
-export interface FakeDataEntry {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-  client: string;
-  address: string;
-  profile: string;
-  images: string[]; 
-}
-
-
 const App = () => {
-
 
   const footerRef = useRef<any>(null)
   const scrollToFooter = () => {
@@ -134,229 +111,13 @@ const App = () => {
     }
   };
 
-
-
- 
-
-  const fakeData: FakeDataEntry[] = [
-    {
-      id: 1,
-      title: "Single House",
-      description: "",
-      date: "Year of Design: 2016",
-      client: "Client: 'A.Baldryan'",
-      address: "",
-      profile: armenBaldryanProfile,
-      images: [armenBaldryanProfile, armenBaldryan1, armenBaldryan2, armenBaldryan4, armenBaldryan5]
-
-    },
-    {
-      id: 2,
-      title: "Single House",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2001",
-      client: "Client: 'A.Mkrtchyan'",
-      address: "",
-      profile: araikProfile,
-      images: [araikProfile, araik1, araik2, araik4]
-
-    },
-    {
-      id: 3,
-      title: "Single House",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2005",
-      client: "Client: 'A.Khachatryan'",
-      address: "",
-      profile: armenVahagniProfile,
-      images: [armenVahagniProfile, armenVahagni1, armenVahagni3, armenVahagni4]
-
-    },
-    {
-      id: 4,
-      title: "Multifunctional Residential Structure",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2012",
-      client: "Client: 'V.Gevorgyan'",
-      address: "Address: P.Buzand street 45",
-      profile: buzandProfile,
-      images: [buzandProfile, buzand1, buzand2, buzand3, buzand5]
-
-    },
-    {
-      id: 5,
-      title: "Multifunctional Residential Structure",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2004",
-      client: "Client: 'FoxFord' LLC",
-      address: "Address: E.Charenc street 24",
-      profile: charencProfile,
-      images: [charencProfile, charenc1, charenc2, charenc3, charenc4, charenc5, charenc6, charenc7, charenc8, charenc9]
-
-    },
-    {
-      id: 6,
-      title: "Single House",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2007",
-      client: "Client: 'M.Ghazaryan'",
-      address: "",
-      profile: manvelProfile,
-      images: [manvelProfile, manvel1, manvel5 ,manvel6]
-
-    },
-    {
-      id: 7,
-      title: `"Vitesse" Store and Service center`,
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2007",
-      client: "Client: 'Zigi Resources'",
-      address: "Address: Avan Acharyan street 41/3",
-      profile: vitessProfile,
-      images: [vitessProfile, vitess1, vitess2, vitess3]
-
-    },
-    {
-      id: 8,
-      title: "Microbial Farm",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2015",
-      client: "Client: 'Greta Grigoryan'",
-      address: "Address: Armavir city, Voskehat community, str. Friendship 126",
-      profile: laboratory1Profile,
-      images: [laboratory1Profile, laboratory1, laboratory2]
-
-    },
-    {
-      id: 9,
-      title: `"Zoler" complex of funeral services`,
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2015",
-      client: "Client: 'A.Z.D. Studio LLC'",
-      address: "Address: District, Hasratyan street",
-      profile: zolerProfile,
-      images: [zolerProfile, zoler1, zoler2, zoler3, zoler4]
-
-    },
-    {
-      id: 10,
-      title: "Public Building Project",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2024",
-      client: "Client: 'H.Hovakimyan'",
-      address: "Address: RA, Kotayk region, Abovyan community, Verin Ptghni village, Boyni district, 1st street 15",
-      profile: avtosrahProfile,
-      images: [avtosrahProfile, avtosrah1]
-
-    },
-    {
-      id: 11,
-      title: "Phytosanitary Inspection Checkpoint",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2018",
-      client: "Client: 'KUAT'",
-      address: "Address: RA Lori marz, Chochkan community, Ayrum-Jiliza",
-      profile: ayrumProfile,
-      images: [ayrumProfile, ayrum2, ayrum4, ayrum5, ayrum6, ayrum8]
-
-    },
-    {
-      id: 12,
-      title: "Multifunctional Residential Structure",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2007-2008",
-      client: "Client: 'Flintrig' CJSC",
-      address: "Address: M.Saryan street 12",
-      profile: saryanProfile,
-      images: [saryanProfile, saryan1]
-
-    },
-    {
-      id: 13,
-      title: "Commercial space",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2006",
-      client: "Client: 'Sh.Tsarukyan'",
-      address: "Address: Sayat-Nova Ave. 20",
-      profile: zigzagProfile,
-      images: [zigzagProfile, zigzag2, zigzag6, zigzag9, zigzag13]
-
-    },
-    {
-      id: 14,
-      title: "Public Building",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2008",
-      client: "Client: 'LAV-SAR LLC'",
-      address: "Address: A. Mikoyan 25",
-      profile: felicityProfile,
-      images: [felicityProfile, felicity1, felicity2]
-
-    },
-    {
-      id: 15,
-      title: "Martini Royale",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2013",
-      client: "Client: 'Andako' LLC",
-      address: "Abovyan street 16",
-      profile: martiniProfile,
-      images: [martiniProfile, martini1, martini2, martini3]
-
-    },
-    {
-      id: 16,
-      title: `Mommy "Store"`,
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit sedtempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation ipsumdolor sit amet consectetur adipiscing elit sed",
-      date: "Year of Design: 2011",
-      client: "Client: 'A. Mkrtchyan'",
-      address: "Abovyan street 3/1",
-      profile: mommyProfile,
-      images: [mommyProfile, mommy1, mommy2]
-
-    },
-  ]
-
   return (
     <div className={styles.app}>
       <Header scrollToFooter={scrollToFooter} />
-      <RootRouter fakeData={fakeData} />
+      <RootRouter /* fakeData={fakeData}  *//>
       <Footer footerRef={footerRef} />
     </div>
   )
 }
 
 export default App
-
-
-
-
-
-
-
-
-
-
- // const category = [
-  //   {
-  //     id: 1,
-  //     name: CategoryName.RESIDENTAL,
-  //     projects: [
-
-  //     ]
-  //   },
-  //   {
-  //     id: 2,
-  //     name: CategoryName.PUBLIC,
-  //     projects: [
-
-  //     ]
-  //   },
-  //   {
-  //     id: 3,
-  //     name: CategoryName.PUBLIC,
-  //     projects: [
-
-  //     ]
-  //   },  
-  // ]
