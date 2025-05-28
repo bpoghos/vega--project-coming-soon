@@ -9,7 +9,7 @@ const HomePage = () => {
         <main role="main" className={styles.homePage}>
             <Main />
             <AboutUsPreview />
-            {/* <LastProjects /> */}
+            <LastProjects />
             {/* <OurClients /> */}
             {/* <Testimonials /> */}
         </main>

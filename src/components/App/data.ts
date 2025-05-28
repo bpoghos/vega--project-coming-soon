@@ -9,6 +9,7 @@ import armenVahagni1 from "../../images/ArmenVahagni/a.jpg";
 
 import manvelProfile from "../../images/Manvel/profile.jpg";
 import manvel1 from "../../images/Manvel/1.jpg";
+import { JSX } from "react/jsx-runtime";
 
 export interface NewDataProps {
     id: number;
@@ -17,12 +18,13 @@ export interface NewDataProps {
     description: string;
     date: string | Date;
     client?: string;
-    address?: string;
+    location?: string;
     architect?: string;
     area?: string;
     stage?: string;
     profileImage: string;
     images: string[];
+    category: string;
 }
 
 export interface CategoryData {
@@ -48,12 +50,13 @@ export const residentialCategoryData: CategoryData = {
             description: "A contemporary residential villa project featuring open spaces, modern architecture, and luxurious amenities.",
             date: "2023-08-12",
             client: "Smith Family",
-            address: "123 Maple Street, Springfield",
+            location: "123 Maple Street, Springfield",
             architect: "John Doe",
             area: "3500 sq ft",
             stage: "Completed",
             profileImage: araikProfile,
             images: [araikProfile, araik1],
+            category: ""
         },
         {
             id: 2,
@@ -62,12 +65,13 @@ export const residentialCategoryData: CategoryData = {
             description: "High-rise luxury apartment complex offering breathtaking views, premium facilities, and urban convenience.",
             date: "2022-05-18",
             client: "Green Properties",
-            address: "456 Oak Avenue, Riverdale",
+            location: "456 Oak Avenue, Riverdale",
             architect: "Jane Smith",
             area: "5000 sq ft",
             stage: "In Progress",
             profileImage: armenVahagniProfile,
             images: [armenVahagniProfile, armenVahagni1],
+            category: ""
         },
         {
             id: 3,
@@ -76,12 +80,13 @@ export const residentialCategoryData: CategoryData = {
             description: "A sustainable house designed with eco-friendly materials, renewable energy systems, and a focus on environmental harmony.",
             date: "2021-11-02",
             client: "Eco Homes Inc.",
-            address: "789 Pine Road, Greenfield",
+            location: "789 Pine Road, Greenfield",
             architect: "Eco Architect",
             area: "2500 sq ft",
             stage: "Planning",
             profileImage: profileArmenBaldryan,
             images: [profileArmenBaldryan, profileArmenBaldryan2],
+            category: ""
         },
         {
             id: 4,
@@ -90,12 +95,13 @@ export const residentialCategoryData: CategoryData = {
             description: "A charming bungalow by the beach, offering a serene coastal lifestyle with modern comforts and breathtaking scenery.",
             date: "2020-07-15",
             client: "Coastal Living",
-            address: "321 Ocean Drive, Beach City",
+            location: "321 Ocean Drive, Beach City",
             architect: "Coastal Architects",
             area: "1800 sq ft",
             stage: "Completed",
             profileImage: manvelProfile,
             images: [manvelProfile, manvel1],
+            category: ""
         },
     ],
 };
@@ -114,12 +120,13 @@ export const commercialCategoryData: CategoryData = {
             description: "State-of-the-art office space for a tech company.",
             date: "2021-11-02",
             client: "Innovatech",
-            address: "789 Silicon Blvd, San Francisco",
+            location: "789 Silicon Blvd, San Francisco",
             architect: "Tech Architects Inc.",
             area: "10000 sq ft",
             stage: "Completed",
             profileImage: "/images/office1.jpg",
             images: ["/images/office1.jpg", "/images/office2.jpg"],
+            category: ""
         },
         {
             id: 6,
@@ -128,12 +135,13 @@ export const commercialCategoryData: CategoryData = {
             description: "Large shopping complex with various stores.",
             date: "2020-07-15",
             client: "City Mall Group",
-            address: "321 Commerce St, Metropolis",
+            location: "321 Commerce St, Metropolis",
             architect: "Retail Design Co.",
             area: "50000 sq ft",
             stage: "Completed",
             profileImage: "/images/mall1.jpg",
             images: ["/images/mall1.jpg", "/images/mall2.jpg"],
+            category: ""
         },
         {
             id: 7,
@@ -142,12 +150,13 @@ export const commercialCategoryData: CategoryData = {
             description: "Headquarters for a multinational corporation.",
             date: "2022-05-18",
             client: "Global Corp",
-            address: "456 Business Rd, Capital City",
+            location: "456 Business Rd, Capital City",
             architect: "Corporate Architects Ltd.",
             area: "20000 sq ft",
             stage: "In Progress",
             profileImage: "/images/corporate1.jpg",
             images: ["/images/corporate1.jpg", "/images/corporate2.jpg"],
+            category: ""
         },
         {
             id: 8,
@@ -156,12 +165,13 @@ export const commercialCategoryData: CategoryData = {
             description: "Unique design for a fine dining restaurant.",
             date: "2023-08-12",
             client: "Gourmet Eats",
-            address: "123 Culinary Ave, Food City",
+            location: "123 Culinary Ave, Food City",
             architect: "Culinary Architects",
             area: "3000 sq ft",
             stage: "Completed",
             profileImage: "/images/restaurant1.jpg",
             images: ["/images/restaurant1.jpg", "/images/restaurant2.jpg"],
+            category: ""
         },
     ],
 };
@@ -180,12 +190,13 @@ export const industrialCategoryData: CategoryData = {
             description: "Large-scale manufacturing plant.",
             date: "2021-11-02",
             client: "Industry Leaders Inc.",
-            address: "789 Factory Rd, Industrial Park",
+            location: "789 Factory Rd, Industrial Park",
             architect: "Industrial Design Group",
             area: "50000 sq ft",
             stage: "Completed",
             profileImage: "/images/plant1.jpg",
             images: ["/images/plant1.jpg", "/images/plant2.jpg"],
+            category: ""
         },
         {
             id: 10,
@@ -194,12 +205,13 @@ export const industrialCategoryData: CategoryData = {
             description: "Modern warehouse complex for logistics.",
             date: "2020-07-15",
             client: "Logistics Co.",
-            address: "321 Storage St, Warehouse City",
+            location: "321 Storage St, Warehouse City",
             architect: "Warehouse Architects",
             area: "30000 sq ft",
             stage: "In Progress",
             profileImage: "/images/warehouse1.jpg",
             images: ["/images/warehouse1.jpg", "/images/warehouse2.jpg"],
+            category: ""
         },
         {
             id: 11,
@@ -208,12 +220,13 @@ export const industrialCategoryData: CategoryData = {
             description: "Central hub for distribution and logistics.",
             date: "2022-05-18",
             client: "Distribution Solutions",
-            address: "456 Logistics Ave, Supply City",
+            location: "456 Logistics Ave, Supply City",
             architect: "Logistics Architects",
             area: "40000 sq ft",
             stage: "Completed",
             profileImage: "/images/distribution1.jpg",
             images: ["/images/distribution1.jpg", "/images/distribution2.jpg"],
+            category: ""
         },
         {
             id: 12,
@@ -222,12 +235,13 @@ export const industrialCategoryData: CategoryData = {
             description: "Facility for energy generation.",
             date: "2023-08-12",
             client: "Energy Corp",
-            address: "123 Energy Rd, Power City",
+            location: "123 Energy Rd, Power City",
             architect: "Energy Architects",
             area: "60000 sq ft",
             stage: "Planning",
             profileImage: "/images/powerplant1.jpg",
             images: ["/images/powerplant1.jpg", "/images/powerplant2.jpg"],
+            category: ""
         },
     ],
 };
@@ -246,12 +260,13 @@ export const urbanCategoryData: CategoryData = {
             description: "A large park in the heart of the city.",
             date: "2022-03-15",
             client: "City Council",
-            address: "Central Park Ave, Urban City",
+            location: "Central Park Ave, Urban City",
             architect: "Urban Landscapes Inc.",
             area: "100 acres",
             stage: "Completed",
             profileImage: "/images/park1.jpg",
             images: ["/images/park1.jpg", "/images/park2.jpg"],
+            category: ""
         },
         {
             id: 14,
@@ -260,12 +275,13 @@ export const urbanCategoryData: CategoryData = {
             description: "A vibrant plaza for community gatherings.",
             date: "2021-09-10",
             client: "Urban Development Authority",
-            address: "Main Square, Downtown",
+            location: "Main Square, Downtown",
             architect: "Plaza Designers Ltd.",
             area: "50,000 sq ft",
             stage: "In Progress",
             profileImage: "/images/plaza1.jpg",
             images: ["/images/plaza1.jpg", "/images/plaza2.jpg"],
+            category: ""
         },
         {
             id: 15,
@@ -274,12 +290,13 @@ export const urbanCategoryData: CategoryData = {
             description: "A modern library for the urban population.",
             date: "2020-06-20",
             client: "City Library Board",
-            address: "Library Lane, Knowledge District",
+            location: "Library Lane, Knowledge District",
             architect: "Library Architects Co.",
             area: "25,000 sq ft",
             stage: "Completed",
             profileImage: "/images/library1.jpg",
             images: ["/images/library1.jpg", "/images/library2.jpg"],
+            category: ""
         },
         {
             id: 16,
@@ -288,12 +305,13 @@ export const urbanCategoryData: CategoryData = {
             description: "A central hub for urban transportation.",
             date: "2023-01-05",
             client: "City Transit Authority",
-            address: "Transit Blvd, Urban Center",
+            location: "Transit Blvd, Urban Center",
             architect: "Transit Designers Group",
             area: "150,000 sq ft",
             stage: "Planning",
             profileImage: "/images/transport1.jpg",
             images: ["/images/transport1.jpg", "/images/transport2.jpg"],
+            category: ""
         },
     ],
 };
@@ -312,12 +330,13 @@ export const reconstructionCategoryData: CategoryData = {
             description: "Restoration of a historic building to its former glory.",
             date: "2021-04-10",
             client: "Heritage Society",
-            address: "Old Town Square, Heritage City",
+            location: "Old Town Square, Heritage City",
             architect: "Historic Architects Inc.",
             area: "15,000 sq ft",
             stage: "Completed",
             profileImage: "/images/historic1.jpg",
             images: ["/images/historic1.jpg", "/images/historic2.jpg"],
+            category: ""
         },
         {
             id: 18,
@@ -326,12 +345,13 @@ export const reconstructionCategoryData: CategoryData = {
             description: "Reconstruction of an old bridge for modern use.",
             date: "2022-08-25",
             client: "City Infrastructure Dept.",
-            address: "River Crossing, Bridge City",
+            location: "River Crossing, Bridge City",
             architect: "Bridge Builders Co.",
             area: "N/A",
             stage: "In Progress",
             profileImage: "/images/bridge1.jpg",
             images: ["/images/bridge1.jpg", "/images/bridge2.jpg"],
+            category: ""
         },
         {
             id: 19,
@@ -340,12 +360,13 @@ export const reconstructionCategoryData: CategoryData = {
             description: "Renovation of an old school building.",
             date: "2020-11-15",
             client: "Education Board",
-            address: "123 Learning St, Education City",
+            location: "123 Learning St, Education City",
             architect: "School Designers Ltd.",
             area: "20,000 sq ft",
             stage: "Completed",
             profileImage: "/images/school1.jpg",
             images: ["/images/school1.jpg", "/images/school2.jpg"],
+            category: ""
         },
         {
             id: 20,
@@ -354,12 +375,13 @@ export const reconstructionCategoryData: CategoryData = {
             description: "Restoration of a historic church.",
             date: "2023-02-10",
             client: "Church Committee",
-            address: "456 Faith Rd, Spiritual Town",
+            location: "456 Faith Rd, Spiritual Town",
             architect: "Sacred Architects",
             area: "10,000 sq ft",
             stage: "Planning",
             profileImage: "/images/church1.jpg",
             images: ["/images/church1.jpg", "/images/church2.jpg"],
+            category: ""
         },
     ],
 };
@@ -378,12 +400,13 @@ export const smallCategoryData: CategoryData = {
             description: "A small, efficient, and stylish tiny house.",
             date: "2021-06-10",
             client: "Minimalist Living",
-            address: "789 Cozy Lane, Smallville",
+            location: "789 Cozy Lane, Smallville",
             architect: "Tiny Home Designers",
             area: "500 sq ft",
             stage: "Completed",
             profileImage: "/images/tinyhouse1.jpg",
             images: ["/images/tinyhouse1.jpg", "/images/tinyhouse2.jpg"],
+            category: ""
         },
         {
             id: 22,
@@ -392,12 +415,13 @@ export const smallCategoryData: CategoryData = {
             description: "A functional and aesthetic garden shed.",
             date: "2022-09-05",
             client: "Green Thumb",
-            address: "123 Garden Path, Bloom City",
+            location: "123 Garden Path, Bloom City",
             architect: "Shed Builders Co.",
             area: "200 sq ft",
             stage: "In Progress",
             profileImage: "/images/shed1.jpg",
             images: ["/images/shed1.jpg", "/images/shed2.jpg"],
+            category: ""
         },
         {
             id: 23,
@@ -406,12 +430,13 @@ export const smallCategoryData: CategoryData = {
             description: "A standalone pod for a home office.",
             date: "2020-12-20",
             client: "Remote Work Solutions",
-            address: "456 Productivity Ave, Worktown",
+            location: "456 Productivity Ave, Worktown",
             architect: "Pod Designers Ltd.",
             area: "150 sq ft",
             stage: "Completed",
             profileImage: "/images/officepod1.jpg",
             images: ["/images/officepod1.jpg", "/images/officepod2.jpg"],
+            category: ""
         },
         {
             id: 24,
@@ -420,12 +445,13 @@ export const smallCategoryData: CategoryData = {
             description: "A fun and safe playhouse for children.",
             date: "2023-03-15",
             client: "Happy Kids",
-            address: "789 Fun St, Play City",
+            location: "789 Fun St, Play City",
             architect: "Playhouse Architects",
             area: "300 sq ft",
             stage: "Planning",
             profileImage: "/images/playhouse1.jpg",
             images: ["/images/playhouse1.jpg", "/images/playhouse2.jpg"],
+            category: ""
         },
     ],
 };

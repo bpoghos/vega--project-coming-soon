@@ -27,7 +27,7 @@ export enum CategoryName {
     SMALL = "Small Architectural Forms"
 }
 export enum LastProjectsContent {
-    TITLE = "Latest Projects",
+    TITLE = "Last Projects",
     SUBTITLE = "Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididuntut laboret dolore magna aliqua enim minim veniam exercitation"
 }
 

@@ -1,0 +1,105 @@
+@import "../../../../../styles/variables/colors.module";
+@import "../../../../../styles/variables/fontFamily.module";
+
+
+.cardsSection {
+    scroll-snap-align: start;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+    z-index: 10; /* Ensure it is above other elements */
+
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    scrollbar-width: none;
+  }
+  
+  .cardsContainer {
+    scroll-snap-align: start; /* Snap each card to the top of the viewport */
+    height: 100vh; /* Each card takes up the full viewport height */
+    display: flex; /* Align image and info side by side */
+    flex-direction: row; /* Horizontal layout for image and info */
+    background-color: #171717;
+  }
+  
+  .image {
+    flex: 3; /* Take up 50% of the width */
+    height: 100%; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .profileImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the image covers the container */
+    }
+  }
+  
+  .info {
+    position: sticky;
+    flex: 1.2; /* Take up 50% of the width */
+    height: 100%; /* Full height */
+    background-color: $black-color;
+    color: $black-color;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6.875rem 4.375rem;
+    transition: opacity 2s ease;
+    opacity: 0;
+
+    &.active {
+      opacity: 1; /* Fade in when visible */
+      color: $white-color;
+    }
+   
+  
+    h2 {
+      font-size: 5rem;
+      font-family: $secondaryFont;
+      font-weight: 600;
+      line-height: 100%;
+      margin-bottom: 1.25rem;
+    }
+  
+    p {
+        font-family: $secondaryFont;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+    }
+
+    .separator{
+        all: unset;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $white-color;
+        margin-bottom: 2.5rem;
+    }
+  
+    button {
+        margin: auto 0 0 0 ;
+      padding: 1.3125rem 3.125rem;
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      font-family: $mainFont;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  
+      &:hover {
+        background-color: white;
+        color: #171717;
+      }
+    }
+  }

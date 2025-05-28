@@ -1,48 +1,35 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { LastProjectsContent } from "../../../../constants/constants";
-// import { FakeDataEntry } from "../../../../components/App/App";
-import { useNavigate } from "react-router";
 import styles from "./LastProjects.module.scss";
+import { residentialCategoryData } from "../../../../components/App/data";
+import { NewDataProps } from "../../../../components/App/data";
+import logoIcon from "../../../../shared/svg/logo-icon.svg";
+import { useEffect, useState } from "react";
+import Cards from "./Cards/Cards";
 
 const LastProjects = () => {
-  const navigate: any = useNavigate();
-
-  const limitedData: { id: string; images: string[]; title: string }[] = [] 
+ 
 
   return (
-    <section className={styles.lastProjects}>
-      <h2 className={styles.lastProjectsTitle}>{LastProjectsContent.TITLE}</h2>
-      <h6 className={styles.lastProjectsSubtitle}><em>{LastProjectsContent.SUBTITLE}</em></h6>
-
-      <Container className={styles.container}>
-        <Row>
-          {
-            limitedData.map((i) => (
-              <Col lg={4} md={4} sm={12} key={i.id} >
-                <article className={styles.card}>
-                  <div className={styles.cardImageWrapper}>
-                    <img
-                      alt=''
-                      src={i.images[0]}
-                      className={styles.cardImage}
-                    />
-                    <div className={styles.hoverEffect}>
-                      <div className={styles.hoverEffectText}>
-                        <h3 className={styles.hoverTitle}>{i.title}</h3>
-                        <p className={styles.hoverText}> Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt
-                          ut laboret dolore magna aliqua enim minim veniam exercitation</p>
-                        <hr className={styles.separator} />
-                        <Button className={styles.button} onClick={() => navigate(`/projects/${i.id}`)}>learn more</Button>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </Col>
-            ))
-          }
-        </Row>
-      </Container>
-    </section>
+    <>
+      <section className={styles.lastProjects}>
+        <div className={styles.iconWrapper}>
+          <img src={logoIcon} alt="Last Projects Icon" />
+        </div>
+        <Container className={styles.container}>
+          <div className={styles.titleWrapper}>
+            <h2 className={styles.title}>{LastProjectsContent.TITLE}</h2>
+          </div>
+          <hr className={styles.separator} />
+          <div className={styles.subtitleWrapper}>
+            <h6 className={styles.subtitle}>
+              <em>{LastProjectsContent.SUBTITLE}</em>
+            </h6>
+          </div>
+        </Container>
+      </section>
+      <Cards />
+    </>
   );
 };
 
