@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import HomePage from '../pages/HomePage/HomePage';
 import CategoryPage from '../pages/CategoryPage/CategoryPage';
-import SinglePage from '../pages/SinglePage/SinglePage';
+// import SinglePage from '../pages/SinglePage/SinglePage';
 import Admin from '../pages/Admin/Admin';
 
 
@@ -11,7 +11,7 @@ const RootRouter = ({ isLogin }: { isLogin: boolean }) => {
             {/* Public Routes */}
             <Route path="/" element={<HomePage />} />
             <Route path="/category/:id" element={<CategoryPage />} />
-            <Route path="/category/:id/single/:id" element={<SinglePage />} />
+            {/* <Route path="/category/:id/single/:id" element={<SinglePage />} /> */}
 
             {/* Admin Login Route */}
             <Route path="/vega-admin" element={<Admin />} />

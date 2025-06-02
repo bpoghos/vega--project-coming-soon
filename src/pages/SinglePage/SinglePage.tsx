@@ -3,27 +3,27 @@ import { Container } from "react-bootstrap";
 import { useParams } from "react-router";
 import styles from "./SinglePage.module.css";
 import { useState } from "react";
-import { FaArrowRight } from "react-icons/fa6";
-import { FaArrowLeft } from "react-icons/fa6";
-import { CategoryData, categoryDataArray } from "../../components/App/data";
+// import { FaArrowRight } from "react-icons/fa6";
+// import { FaArrowLeft } from "react-icons/fa6";
+// import { CategoryData, categoryDataArray } from "../../components/App/data";
 // import { fakeData } from "../../components/App/data";
 
 const SinglePage = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const { id } = useParams<{ id: string }>(); // Extracting id from the URL
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const { id } = useParams<{ id: string }>(); // Extracting id from the URL
 
-  // Finding the relevant entry in fakeData based on id
+  // // Finding the relevant entry in fakeData based on id
 
-  const params = useParams<{ id: string }>();
-  const categoryId = params.id;
+  // const params = useParams<{ id: string }>();
+  // const categoryId = params.id;
 
-  console.log("categoryId", typeof categoryId);
+  // console.log("categoryId", typeof categoryId);
 
-  const projects = categoryDataArray.map((item) => item.projects).flat();
+  // const projects = categoryDataArray.map((item) => item.projects).flat();
 
-  const projectId = projects.find((item) => item.id === Number(categoryId));
+  // const projectId = projects.find((item) => item.id === Number(categoryId));
 
-  console.log("projectId", projectId);
+  // console.log("projectId", projectId);
 
   // console.log("findParams", findParams);
 
@@ -57,13 +57,13 @@ const SinglePage = () => {
     <div>
       {/* <Container className={styles.imagesContainer}> */}
 
-      <img
+      {/* <img
           alt=""
           src={projectId?.images[0]}
           className={styles.image}
-        />
+        /> */}
 
-      <h1>{projectId?.title}</h1>
+      {/* <h1>{projectId?.title}</h1> */}
 
       {/* <button onClick={prevImage} className={styles.arrowLeft}><FaArrowLeft /></button>
         <button onClick={nextImage} className={styles.arrowRight}><FaArrowRight /></button> */}

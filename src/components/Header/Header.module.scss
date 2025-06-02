@@ -61,5 +61,26 @@
     }
 }
 
+.adminHeader{
+    display: flex;
+    justify-content: center;
+
+    .adminHeaderContainer{
+        max-width: 100% !important;
+        margin: 0 32px;
+    }
+}
+
+.logOutButton{
+    margin-left: 10px;
+}
+
+.adminButtons{
+    margin-left: 10px;
+    
+}
+
+
+
 
 

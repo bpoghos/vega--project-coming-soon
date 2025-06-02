@@ -1,9 +1,56 @@
-.profileImage{
-    width: 100%;
+.profileImage {
+    height: 6rem;
     padding: 0.5rem;
 }
 
-.multipleImage{
-    width: 25%;
+.multipleImage {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
     padding: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.modalBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%; /* Make modal body take full width */
+    height: 100%; /* Make modal body take full height */
+}
+
+.modalImage {
+    width: 100%; /* Set explicit width */
+    height: 80%; /* Set explicit height */
+    object-fit: contain;
+    border: 2px solid #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.arrowButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 1);
+    }
+}
+
+.arrowButton:first-of-type {
+    left: 5%; /* Adjust positioning for larger modal */
+}
+
+.arrowButton:last-of-type {
+    right: 5%; /* Adjust positioning for larger modal */
 }

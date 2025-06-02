@@ -9,7 +9,7 @@ import armenVahagni1 from "../../images/ArmenVahagni/a.jpg";
 
 import manvelProfile from "../../images/Manvel/profile.jpg";
 import manvel1 from "../../images/Manvel/1.jpg";
-import { JSX } from "react/jsx-runtime";
+
 
 export interface NewDataProps {
     id: number;
@@ -22,19 +22,21 @@ export interface NewDataProps {
     architect?: string;
     area?: string;
     stage?: string;
-    profileImage: string;
-    images: string[];
+    profileImage?: string;
+    images?: string[];
     category: string;
 }
 
 export interface CategoryData {
-    id: number;
+    id: number | string;
     name: string;
     title: string;
     link: string;
     description?: string;
     projects: NewDataProps[];
 }
+
+
 
 export const residentialCategoryData: CategoryData = {
     id: 1,
@@ -55,7 +57,7 @@ export const residentialCategoryData: CategoryData = {
             area: "3500 sq ft",
             stage: "Completed",
             profileImage: araikProfile,
-            images: [araikProfile, araik1],
+            images: [araikProfile, araik1, araik1, araik1, araik1],
             category: ""
         },
         {

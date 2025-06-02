@@ -15,20 +15,18 @@ const App = () => {
     }
   };
 
-  // Define routes where Header and Footer should not be displayed
-  const noHeaderFooterRoutes = ["/vega-admin", "/trio-admin"];
+  // Define routes where Footer should not be displayed
+  const noFooterRoutes = ["/vega-admin", "/trio-admin"];
 
   return (
     <div className={styles.app}>
-      {/* Conditionally render Header */}
-      {!noHeaderFooterRoutes.includes(location.pathname) && (
-        <Header scrollToFooter={scrollToFooter} />
-      )}
+      {/* Always render Header */}
+      <Header scrollToFooter={scrollToFooter} />
 
       <RootRouter isLogin={true} />
 
       {/* Conditionally render Footer */}
-      {!noHeaderFooterRoutes.includes(location.pathname) && (
+      {!noFooterRoutes.includes(location.pathname) && (
         <Footer footerRef={footerRef} />
       )}
     </div>
