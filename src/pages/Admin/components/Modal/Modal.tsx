@@ -20,7 +20,7 @@ const AdminModal: React.FC<AdminModalProps> = ({ showModal, setShowModal, adminD
         <Modal.Title>{adminData ? "Edit Admin Data" : "Add New Admin Data"}</Modal.Title>
       </Modal.Header>
       <Modal.Body className="bg-light">
-        <AdminAddForm setShowModal={setShowModal}  />
+        <AdminAddForm setShowModal={setShowModal} post={adminData} /> {/* Pass adminData to AdminAddForm */}
       </Modal.Body>
     </Modal>
   );

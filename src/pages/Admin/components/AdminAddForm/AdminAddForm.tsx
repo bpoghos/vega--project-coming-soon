@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../../../../configs/firebase/firebase";
-import { categoryDataArray } from "../../../../components/App/data";
+import { useVegaData } from "../../../../customHooks/useVegaData";
+import { CategoryData } from "../../../../components/App/data";
 
 interface AdminDataProps {
+  id: string;
   title: string;
   subtitle: string;
   description: string;
@@ -21,23 +23,29 @@ interface AdminDataProps {
 
 const AdminAddForm = ({
   setShowModal,
+  post,
 }: {
   setShowModal: (value: boolean) => void;
+  post?: AdminDataProps; // Optional post prop for editing
 }) => {
-  const [formData, setFormData] = useState<AdminDataProps>({
-    title: "",
-    subtitle: "",
-    description: "",
-    category: "",
-    profileImage: "",
-    date: "",
-    location: "",
-    area: "",
-    client: "",
-    architect: "",
-    stage: "",
-    multipleImages: [],
-  });
+  const { addPost, editPost, data } = useVegaData(); // Access addPost and editPost methods from context
+  const [formData, setFormData] = useState<AdminDataProps>(
+    post || {
+      id: Math.random().toString(36).substring(2, 15), // Generate a random ID for new posts
+      title: "",
+      subtitle: "",
+      description: "",
+      category: "",
+      profileImage: "",
+      date: "",
+      location: "",
+      area: "",
+      client: "",
+      architect: "",
+      stage: "",
+      multipleImages: [],
+    }
+  );
   const [isUpload, setIsUpload] = useState<boolean>(false);
 
   const stageOptions = ["Planning", "Construction", "Completed"]; // Predefined stage options
@@ -56,7 +64,7 @@ const AdminAddForm = ({
 
     setIsUpload(true); // Show skeleton while uploading
 
-    const storageRef = ref(storage, `adminPhotos/${file.name}_${Date.now()}`);
+    const storageRef = ref(storage, `profile-photo/${file.name}_${Date.now()}`);
     try {
       await uploadBytes(storageRef, file); // Upload the file to Firebase storage
       const downloadURL = await getDownloadURL(storageRef); // Get the download URL
@@ -66,7 +74,7 @@ const AdminAddForm = ({
         profileImage: downloadURL, // Update the profileImage in formData
       }));
     } catch (error) {
-      console.error("Error uploading image:", error);
+      console.error("Error uploading profile image:", error);
     } finally {
       setIsUpload(false); // Remove skeleton after upload is complete
     }
@@ -80,13 +88,13 @@ const AdminAddForm = ({
 
     const uploadedImages: string[] = [];
     for (const file of Array.from(files)) {
-      const storageRef = ref(storage, `adminPhotos/${file.name}_${Date.now()}`);
+      const storageRef = ref(storage, `multiple-photo/${file.name}_${Date.now()}`);
       try {
         await uploadBytes(storageRef, file);
         const downloadURL = await getDownloadURL(storageRef);
         uploadedImages.push(downloadURL);
       } catch (error) {
-        console.error("Error uploading image:", error);
+        console.error("Error uploading multiple images:", error);
       }
     }
 
@@ -100,8 +108,45 @@ const AdminAddForm = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData);
-    setShowModal(false);
+    try {
+      if (!formData.id) {
+        throw new Error("Invalid ID for the post.");
+      }
+  
+      if (post) {
+        // Edit existing post
+        await editPost(formData);
+        alert("Post updated successfully!");
+      } else {
+        // Add new post
+        await addPost(formData);
+        alert("Post added successfully!");
+      }
+      setShowModal(false); // Close the modal after submission
+    } catch (error) {
+      console.error("Error submitting post:", error);
+      alert("Failed to submit post. Please try again.");
+    }
+  };
+
+
+  const handleDeleteImage = async (imageUrl: string, index: number) => {
+    try {
+      // Remove the image locally
+      setFormData((prevState) => ({
+        ...prevState,
+        multipleImages: prevState.multipleImages.filter((_, i) => i !== index),
+      }));
+  
+      // Remove the image from Firestore storage
+      const imageRef = ref(storage, imageUrl); // Reference to the image in Firestore
+      await deleteObject(imageRef); // Delete the image from Firestore
+  
+      console.log(`Image at ${imageUrl} deleted successfully.`);
+    } catch (error) {
+      console.error("Error deleting image:", error);
+      alert("Failed to delete image. Please try again.");
+    }
   };
 
   return (
@@ -152,7 +197,7 @@ const AdminAddForm = ({
             required
           >
             <option value="">Select Category</option>
-            {categoryDataArray.map((category) => (
+            {data.map((category: CategoryData) => (
               <option key={category.name} value={category.name}>
                 {category.title}
               </option>
@@ -259,27 +304,42 @@ const AdminAddForm = ({
       </Form.Group>
 
       <Form.Group controlId="formMultipleImages" className="mb-3">
-        <Form.Label>Multiple Images</Form.Label>
-        <div className="mb-2">
-          {formData.multipleImages.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Image ${index + 1}`}
-              className="img-thumbnail"
-              style={{ width: "150px", height: "100px", objectFit: "cover", marginRight: "5px" }}
-            />
-          ))}
-        </div>
-        <Form.Control type="file" name="multipleImages" onChange={handleMultipleFileChange} multiple />
-      </Form.Group>
+  <Form.Label>Multiple Images</Form.Label>
+  <div className="mb-2">
+    {formData.multipleImages.map((image, index) => (
+      <div key={index} style={{ display: "inline-block", position: "relative", marginRight: "10px" }}>
+        <img
+          src={image}
+          alt={`Image ${index + 1}`}
+          className="img-thumbnail"
+          style={{ width: "150px", height: "100px", objectFit: "cover" }}
+        />
+        <Button
+          variant="danger"
+          size="sm"
+          style={{
+            position: "absolute",
+            top: "5px",
+            right: "5px",
+            padding: "2px 5px",
+            fontSize: "12px",
+          }}
+          onClick={() => handleDeleteImage(image, index)} // Call the delete handler
+        >
+          X
+        </Button>
+      </div>
+    ))}
+  </div>
+  <Form.Control type="file" name="multipleImages" onChange={handleMultipleFileChange} multiple />
+</Form.Group>
 
       <div className="d-flex justify-content-end">
         <Button variant="outline-dark" onClick={() => setShowModal(false)} className="me-2">
           Cancel
         </Button>
         <Button variant="success" type="submit">
-          Submit
+          {post ? "Update" : "Submit"}
         </Button>
       </div>
     </Form>

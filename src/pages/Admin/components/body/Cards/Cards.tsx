@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Table, Form } from "react-bootstrap";
 import Card from "./Card/Card";
 import { CategoryData, NewDataProps } from "../../../../../components/App/data";
@@ -10,15 +10,26 @@ const Cards = () => {
 
   const { data } = useVegaData(); // Access data from context
 
+  // Show all projects initially
+  useEffect(() => {
+    if (data) {
+      const allProjects = data.flatMap((category: CategoryData) => category.projects); // Combine all projects
+      setFilteredProjects(allProjects);
+    }
+  }, [data]); // Run whenever `data` changes
+
   const handleCategoryChange = (categoryName: string) => {
     setSelectedCategory(categoryName);
 
-    // Find the selected category and set its projects to filteredProjects
-    const selectedCategoryData = data?.find((category: CategoryData) => category.name === categoryName);
-    setFilteredProjects(selectedCategoryData ? selectedCategoryData.projects : []);
-
-    console.log("Selected Category Data:", selectedCategoryData);
-    console.log("Filtered Projects:", selectedCategoryData ? selectedCategoryData.projects : []);
+    if (!categoryName) {
+      // Show all projects if no category is selected
+      const allProjects = data?.flatMap((category: CategoryData) => category.projects) || [];
+      setFilteredProjects(allProjects);
+    } else {
+      // Filter projects by selected category
+      const selectedCategoryData = data?.find((category: CategoryData) => category.name === categoryName);
+      setFilteredProjects(selectedCategoryData ? selectedCategoryData.projects : []);
+    }
   };
 
   return (
@@ -30,7 +41,7 @@ const Cards = () => {
           onChange={(e) => handleCategoryChange(e.target.value)}
           style={{ maxWidth: "300px" }}
         >
-          <option value="">Select Category</option>
+          <option value="">All Categories</option>
           {data?.map((category: CategoryData) => (
             <option key={category.id} value={category.name}>
               {category.title}

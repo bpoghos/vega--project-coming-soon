@@ -4,6 +4,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header";
 import styles from "./App.module.scss";
 import { useRef } from "react";
+import { AuthProvider } from "../../configs/adminConfigs/AuthContext";
 
 const App = () => {
   const footerRef = useRef<any>(null);
@@ -22,9 +23,9 @@ const App = () => {
     <div className={styles.app}>
       {/* Always render Header */}
       <Header scrollToFooter={scrollToFooter} />
-
-      <RootRouter isLogin={true} />
-
+      <AuthProvider>
+      <RootRouter />
+      </AuthProvider>
       {/* Conditionally render Footer */}
       {!noFooterRoutes.includes(location.pathname) && (
         <Footer footerRef={footerRef} />

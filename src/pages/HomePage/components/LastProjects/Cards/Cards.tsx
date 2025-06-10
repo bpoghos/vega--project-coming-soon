@@ -1,8 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Cards.module.scss";
 import { NewDataProps, residentialCategoryData } from "../../../../../components/App/data";
+// import { useVegaData } from "../../../../../customHooks/useVegaData";
 
 const Cards = () => {
+
+  // const { data } = useVegaData(); // Access data from context
+
+  // const categoryData = data.find((category: CategoryData) => category.name === "residential")
+
+  // console.log(categoryData);
+  
+
   const limitedData: NewDataProps[] = residentialCategoryData.projects.slice(0, 3);
 
   const [activeCard, setActiveCard] = useState(0); // Tracks the currently active card

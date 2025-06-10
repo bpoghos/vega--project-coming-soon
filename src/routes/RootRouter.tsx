@@ -3,9 +3,12 @@ import HomePage from '../pages/HomePage/HomePage';
 import CategoryPage from '../pages/CategoryPage/CategoryPage';
 // import SinglePage from '../pages/SinglePage/SinglePage';
 import Admin from '../pages/Admin/Admin';
+import LoginPage from '../configs/adminConfigs/LoginPage';
+import { useAuth } from '../configs/adminConfigs/AuthContext';
 
 
-const RootRouter = ({ isLogin }: { isLogin: boolean }) => {
+const RootRouter = () => {
+    const { isLogin } = useAuth();
     return (
         <Routes>
             {/* Public Routes */}
@@ -13,22 +16,11 @@ const RootRouter = ({ isLogin }: { isLogin: boolean }) => {
             <Route path="/category/:id" element={<CategoryPage />} />
             {/* <Route path="/category/:id/single/:id" element={<SinglePage />} /> */}
 
-            {/* Admin Login Route */}
-            <Route path="/vega-admin" element={<Admin />} />
 
-            {/* Admin Dashboard Route */}
-            {/* <Route
-                path="/trio-admin"
-                element={
-                    isLogin ? (
-                        <ConcertsProvider>
-                            <Admin />
-                        </ConcertsProvider>
-                    ) : (
-                        <Navigate to="/vega-admin-login" replace />
-                    )
-                }
-            /> */}
+            <Route path="/vega-admin-login" element={<LoginPage />} />
+            <Route path="/vega-admin" element={isLogin ? <Admin /> : <Navigate to="/vega-admin-login" replace />} />
+
+            {/* Redirect to home if no route matches */}
         </Routes>
     );
 };

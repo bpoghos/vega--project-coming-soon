@@ -6,6 +6,7 @@ import { useProgressiveLoad } from "../../../../shared/customHook/customHook";
 import styles from "./Cards.module.scss";
 
 const Cards = () => {
+  
   const params = useParams<{ id: string }>();
   const categoryId = params.id;
 

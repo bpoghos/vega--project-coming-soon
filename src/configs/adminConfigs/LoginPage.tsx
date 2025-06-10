@@ -24,7 +24,7 @@ const LoginPage = () => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             setIsLogin(true);
-            navigate("/trio-admin");
+            navigate("/vega-admin");
         } catch (err: any) {
             setError("Invalid email or password!");
         } finally {

@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { LastProjectsContent } from "../../../../constants/constants";
 import styles from "./LastProjects.module.scss";
-import { residentialCategoryData } from "../../../../components/App/data";
+// import { residentialCategoryData } from "../../../../components/App/data";
 import { NewDataProps } from "../../../../components/App/data";
 import logoIcon from "../../../../shared/svg/logo-icon.svg";
 import { useEffect, useState } from "react";

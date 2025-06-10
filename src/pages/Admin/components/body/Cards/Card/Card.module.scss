@@ -1,6 +1,13 @@
 .profileImage {
     height: 6rem;
     padding: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .multipleImage {
@@ -53,4 +60,11 @@
 
 .arrowButton:last-of-type {
     right: 5%; /* Adjust positioning for larger modal */
+}
+
+.actionButtons{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
