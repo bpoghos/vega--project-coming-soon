@@ -1,0 +1,130 @@
+@import "../../../../styles/variables/colors.module";
+@import "../../../../styles/variables/fontFamily.module";
+
+.clientsFeedback {
+    position: relative;
+    background-color: $white-color;
+    scroll-snap-align: start;
+    height: 100vh;
+    text-align: center;
+    z-index: 10;
+
+    h2 {
+        position: absolute;
+        top: 8%;
+        right: 12%;
+        font-family: $decorativeFont;
+        font-size: 12rem;
+        line-height: 100%;
+        color: #ccc;
+        margin-bottom: 1.875rem;
+        text-align: end;
+    }
+}
+
+.carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 7rem 0;
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none !important;
+    }
+
+}
+
+.carouselItem {
+    position: relative;
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    .background {
+        width: 90%;
+        height: 95vh;
+        margin: 0 auto;
+        display: flex;
+        justify-content: start;
+        align-items: end;
+
+        .box{
+            width: 450px;
+            height: 450px;
+            background-color: #ffcd07;
+        }
+    }
+
+    .content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -48%);
+        width: 82%;
+        height: 78vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+
+        .imageBox {
+            margin-top: 60px;
+            width: 260px;
+            height: 260px;
+            background-color: $white-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .image {
+                width: 95%;
+                height: 95%;
+                object-fit: cover;
+            }
+        }
+    
+        .feedback {
+            width: 100%;
+            height: 330px;
+            background-color: $black-color;
+            color: $white-color;
+            font-family: $secondaryFont;
+            text-align: center;
+
+            .name{
+                margin-top: 2rem;
+                font-size: 3rem;
+                font-weight: 500;
+            }
+
+            .profession{
+                font-size: 1.7rem;
+                font-style: italic;
+                font-weight: 200;
+            }
+
+            .text{
+                font-size: 1.4rem;
+                font-weight: 100;
+                font-style: italic;
+                width: 60%;
+                margin: 40px auto 0 auto;
+
+            }
+        }
+    }
+}

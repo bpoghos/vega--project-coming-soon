@@ -1,0 +1,27 @@
+@import "../../../../styles/variables/colors.module";
+@import "../../../../styles/variables/fontFamily.module";
+
+.contactUs{
+    position: relative;
+    padding-top: 6rem;
+    background-color: $primary-color;
+    scroll-snap-align: start;
+    height: 100vh;
+    text-align: center;
+    z-index: 10;
+    color: $white-color;
+}
+
+.contactUsContainer{
+    text-align: start;
+
+    .question{
+        font-family: $secondaryFont;
+        font-weight: bolder;
+        font-style: italic
+    ;
+    }
+    .title{
+
+    }
+}

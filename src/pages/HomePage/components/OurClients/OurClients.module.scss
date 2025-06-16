@@ -2,31 +2,114 @@
 @import "../../../../styles/variables/fontFamily.module";
 
 .ourClients {
-    position: relative; 
-    padding-top: 8.75rem;
+    position: relative;
+    padding-top: 3.5rem;
     background-color: $white-color;
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100%;
     text-align: center;
-    z-index: 1;
+    z-index: 10;
+    background-image: url('./background/background-image.svg');
+    background-repeat: no-repeat;
+    background-position: center;
 
     @media screen and (max-width: 768px) {
         padding-top: 5rem;
     }
 }
 
-.ourClientsTitle {
-    font-size: 50px;
-    text-transform: uppercase;
-    font-family: $decorativeFont;
-    font-weight: 400;
-    color: $black-color;
-    font-style: normal;
-    margin: 0 1rem;
-}
+.container {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
 
-.ourClientsSubtitle {
-    margin: 0 20%;
-    color: $grey-color;
-}
+    .titleWrapper {
+      width: 50%;
+      padding-left: 2rem;
+
+      .title {
+        font-size: 11rem;
+        font-family: $decorativeFont;
+        color: $white-color;
+        text-align: start;
+        width: fit-content;
+        line-height: 110%;
+        transform: translateY(0.5rem);
+
+      }
+    }
+
+    .separator {
+      all: unset;
+      display: block;
+      width: 1px;
+      height: 22rem;
+      background-color: $white-color;
+    }
+
+    .subtitleWrapper {
+      width: 50%;
+      padding-right: 2rem;
+      display: flex;
+      align-items: flex-end;
+
+      .subtitle {
+        text-align: end;
+        font-family: $secondaryFont;
+        font-size: 2rem;
+        font-weight: 100;
+        font-style: italic;
+        line-height: 1.4;
+        color: $white-color;
+        margin: 0;
+        transform: translateY(-2.1rem);
+
+      }
+    }
+
+
+    
+  }
+
+  .carouselWrapper {
+    overflow: hidden; /* Hide overflow to create the scrolling effect */
+    width: 100%;
+    position: relative;
+    margin-top: 1rem;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 3rem; /* Add spacing between items */
+    animation: scrollLeft 50s linear infinite; /* Continuous scrolling animation */
+  }
+  
+  .carouselItem {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    width: 20rem; /* Adjust the width of each item */
+    height: 20rem;
+    background-color: $white-color; /* Background color for items */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carouselImage {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Keyframes for scrolling animation */
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* Scroll the entire width of the carousel */
+    }
+  }
 
 .card {
     margin-top: 40px;
