@@ -1,10 +1,10 @@
 @import "../../../../styles/variables/colors.module";
 @import "../../../../styles/variables/fontFamily.module";
 
-.contactUs{
+.contactUs {
     position: relative;
-    padding-top: 6rem;
-    background-color: $primary-color;
+    padding-top: 4.5rem;
+    background: $primary-color;
     scroll-snap-align: start;
     height: 100vh;
     text-align: center;
@@ -12,16 +12,186 @@
     color: $white-color;
 }
 
-.contactUsContainer{
+.contactUsContainer {
     text-align: start;
 
-    .question{
+    .question {
         font-family: $secondaryFont;
         font-weight: bolder;
-        font-style: italic
-    ;
+        font-style: italic;
     }
-    .title{
 
+    .title {
+        font-family: $mainFont;
+        font-weight: bolder;
+        font-size: 120px;
+        margin: 0;
+    }
+}
+
+.contactUsContent {
+    padding: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    .contactUsText {
+        width: 50%;
+        font-family: $mainFont;
+        font-size: 1.2rem;
+        line-height: 1.5;
+
+        .subtitle {
+            font-family: $secondaryFont;
+            font-weight: 200;
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+    }
+
+    .contactUsForm {
+        width: 45%;
+
+        .formGroup {
+            position: relative;
+            margin-bottom: 2rem;
+            background-color: transparent;
+
+
+
+            .control {
+                border-radius: 0;
+                padding: 0.8rem 1.2rem 1.5rem 0.8rem;
+                background-color: transparent;
+                color: $white-color;
+                border: none;
+                border-bottom: 2px solid $white-color;
+                font-size: 1.2rem;
+
+                &:focus,
+                &:focus-visible,
+                &:active {
+                    outline: none !important;
+                    /* Remove focus outline */
+                    box-shadow: none !important;
+                    /* Remove box-shadow if applied */
+                }
+
+                &:focus::placeholder {
+                    opacity: 0;
+                    /* Make placeholder invisible */
+                }
+
+                &::placeholder {
+                    color: $white-color;
+                    /* Change placeholder color */
+                    font-size: 1.2rem;
+                    transition: opacity 0.3s ease-in-out;
+                    /* Smooth transition */
+                }
+            }
+
+            .textarea {
+                height: 6rem;
+            }
+
+
+            label {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                font-family: $mainFont;
+                font-weight: bold;
+                font-size: 1rem;
+                color: $primary-color;
+                transition: all 0.3s ease-in-out;
+                pointer-events: none;
+                /* Prevent interaction with the label */
+                opacity: 0;
+                /* Initially hidden */
+            }
+
+            input:focus+label,
+            input:not(:placeholder-shown)+label,
+            textarea:focus+label,
+            textarea:not(:placeholder-shown)+label {
+                top: -1rem;
+                left: 0;
+                font-size: 0.8rem;
+                color: $white-color;
+                opacity: 1;
+                /* Show label with animation */
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 10px;
+                resize: none; 
+                border: 1px solid $primary-color;
+                padding: 1.2rem 1.2rem 1.5rem 0.8rem;
+                border-radius: 5px;
+                font-family: $mainFont;
+                font-size: 1rem;
+                scrollbar-color: $white-color transparent;
+                /* Thumb and track colors */
+                scrollbar-width: thin;
+
+                &::-webkit-scrollbar {
+                    width: 8px;
+                    /* Width of the scrollbar */
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: transparent;
+                    /* Background color of the scrollbar track */
+                    border-radius: 4px;
+                    /* Optional: Rounded corners */
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: transparent;
+                    /* Color of the scrollbar thumb */
+                    border-radius: 4px;
+                    /* Optional: Rounded corners */
+                    border: 2px solid $black-color;
+                    /* Optional: Add border around the thumb */
+                }
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: transparent;
+                    /* Color when hovering over the scrollbar thumb */
+                }
+            }
+
+            textarea {
+                height: 150px;
+            }
+        }
+
+        .submitButton {
+            width: 100%;
+            background-color: $white-color;
+            color: $primary-color;
+            font-family: $secondaryFont;
+            font-size: 2rem;
+            border: none;
+            border-radius: 0;
+
+            &:hover {
+                background-color: $white-color;
+                color: $primary-color;
+                cursor: pointer;
+            }
+            &:focus,
+            &:focus-visible,
+            &:active {
+                color: $black-color;
+                outline: none !important;
+                box-shadow: none !important;      
+            }
+        }
     }
 }
